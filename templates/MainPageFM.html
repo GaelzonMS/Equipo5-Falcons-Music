@@ -23,32 +23,37 @@
     </div>
   </aside><!--lo podemos convertir a botones que nos lleven <a href="perfil.html"> Chequenlo si quieren-->
 
-    <!--Navegador y nombre de la página-->
-    <nav>
-        <form>
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar">
-        </form>
-        <div>
-            <h2 id="nombrePagina">Falcon's Music</h2>
-            <img id="logo" src="">
-        </div>
-    </nav>
+    <main class="main-content"></main>
 
+    <!--encabezado-->
+    <section class="holo">
+        <input type="text" class="search-bar" placeholder="Buscar">
+        <h2>Falcon's Music</h2>
+         <img id="logo" src="">
+    </section>
+  
     <!--Sección Home-->
     <section id="PaginaPrincipal">
         <div><img id="imgDecoracion" src=""></div>
 
     <!--Top Albumes Carrusel-->
-        <div id="carrusel" class="carrusel">
-            <h4>Top Albumes del momento</h4>
+    <section class="carrusel-section">
+        <h2>Top Albumes del momento</h2>
+        <div class="carrusel">
             <button class="carrusel.btn prev">&#10094;</button>
             <div class="carrusel-track">
-                <img src="album1.jpg" alt="Álbum 1" class="album">
+                <img src="Statics/images/album1.jpg" alt="Álbum 1">
+                <img src="Statics/images/album2.jpg" alt="Álbum 2">
+                <img src="Statics/images/album3.jpg" alt="Álbum 3">
+            </div>
             <button class ="carrusel-btn next">&#10095;</button>
         </div>
+    </section>
+
         <!--Mas escuchados y recomendaciones-->
-        <div>
-            <h3 id="mas-escuchados">Más escuchados</h3>
+      <section class="lists">
+        <div class="most-played">
+            <h3>MÁS ESCUCHADOS</h3>
             <ol>
                 <li>01 Bad Feeling-Jagwar Twin</li>
                 <li>02 Immortals-Fall Out Boy</li>
@@ -56,15 +61,16 @@
                 <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
             </ol>
         </div>
-    </section>
+    
 
-    <section id="recomendaciones"><!--un prototipo nada mas, chequenlo posrfis-->
-        <h2>Recomendaciones</h2>
-        <ul class="listaCanciones">
-            <li> Canción 1 - Artista</li>
-            <li> Canción 2 - Artista</li>
-            <li> Canción 3 - Artista</li>
-        </ul>
+        <div class="recommendations">
+           <h2>Recomendaciones</h2>
+           <ul class="listaCanciones">
+                <li> Canción 1 - Artista</li>
+                <li> Canción 2 - Artista</li>
+                <li> Canción 3 - Artista</li>
+             </ul>
+        </div>     
     </section>
 
     <!--footer player-->
