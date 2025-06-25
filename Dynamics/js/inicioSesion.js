@@ -52,7 +52,7 @@ loginForm.addEventListener("submit", function(e){
         let cookie_name = "USERACTUAL";
         let cookie_duration = 1000*60*60;
 
-        document.cookie = `${cookie_name}=${datos}; max-age=${cookie_duration}`;
+        document.cookie = `${cookie_name}=${valor}; max-age=${cookie_duration}`;
         window.location.assign("./MainPageFM.html");
     }
     
