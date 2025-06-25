@@ -7,74 +7,51 @@
     <title>Falcon's Music</title>
 </head>
 <body>
-   <div class="mostrar" id="home"> <!--agreganod y quitando la clase no mostrar podemos-->
-                <!--sidebar-->
-    <aside class="sidebar">
-    <div class="profile">👤 Perfil</div>
-    <nav class="menu">
-      <a href="#">NAVEGAR</a>
-      <a href="#">GENERO</a>
-      <a href="#">PLAYLIST</a>
-      <a href="#">ARTISTAS</a>
-      <a href="#">LIBRERÍA</a>
+    <aside id="botones">
+        <p id="nombre"><img id="imgperfil" href="">Perfil</p>
+        <p class="asideP">NAVEGAR</p>
+        <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
+        <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
+        <div><button class="asideBtns" id="btnArtistas">ARTISTAS</button></div>
+        <p class="asideP" id="libreria">LIBRERIA</p>
+        <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
+        <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
+    </aside>
+    <nav>
+        <form>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+        </form>
+        <div>
+            <h2 id="nombrePagina">Falcon's Music</h2>
+            <img id="logo" src="">
+        </div>
     </nav>
-    <div class="fav">
-      <p>FAVORITOS</p>
-      <a href="#">Agregar playlist</a>
-    </div>
-  </aside><!--lo podemos convertir a botones que nos lleven <a href="perfil.html"> Chequenlo si quieren-->
-
-    <main class="main-content"></main>
-
-    <!--encabezado-->
-    <section class="holo">
-        <input type="text" class="search-bar" placeholder="Buscar">
-        <h2>Falcon's Music</h2>
-         <img id="logo" src="">
-    </section>
-  
-    <!--Sección Home-->
     <section id="PaginaPrincipal">
         <div><img id="imgDecoracion" src=""></div>
 
-    <!--Top Albumes Carrusel-->
-    <section class="carrusel-section">
-        <h2>Top Albumes del momento</h2>
-        <div class="carrusel">
+        <div id="carrusel" class="carrusel">
             <button class="carrusel.btn prev">&#10094;</button>
             <div class="carrusel-track">
-                <img src="Statics/images/album1.jpg" alt="Álbum 1">
-                <img src="Statics/images/album2.jpg" alt="Álbum 2">
-                <img src="Statics/images/album3.jpg" alt="Álbum 3">
+                <img src="album1.jpg" alt="Álbum 1" class="album"><!--Es solo un ejemplo de como
+                se van a declarar las imagenes para el carrusel-->
             </div>
             <button class ="carrusel-btn next">&#10095;</button>
+           
+        </div>
+        <div id="">
+            <h2>Mas escuchados</h2>
         </div>
     </section>
 
-        <!--Mas escuchados y recomendaciones-->
-      <section class="lists">
-        <div class="most-played">
-            <h3>MÁS ESCUCHADOS</h3>
-            <ol>
-                <li>01 Bad Feeling-Jagwar Twin</li>
-                <li>02 Immortals-Fall Out Boy</li>
-                <li>03 Radioactive-Imagine Dragons</li>
-                <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
-            </ol>
-        </div>
-    
-
-        <div class="recommendations">
-           <h2>Recomendaciones</h2>
-           <ul class="listaCanciones">
-                <li> Canción 1 - Artista</li>
-                <li> Canción 2 - Artista</li>
-                <li> Canción 3 - Artista</li>
-             </ul>
-        </div>     
+    <section id="recomendaciones"><!--un prototipo nada mas, chequenlo posrfis-->
+        <h2>Recomendaciones</h2>
+        <ul class="listaCanciones">
+            <li> Canción 1 - Artista</li>
+            <li> Canción 2 - Artista</li>
+            <li> Canción 3 - Artista</li>
+        </ul>
     </section>
 
-    <!--footer player-->
     <footer>
         <div id="cancionArtista">
             <p id="artistaCancionR"><img id="imagCancion" href="../Statics/media/background.png">Artista</p>
@@ -86,32 +63,5 @@
         <button id="postSong"><img href=""></button>
         <button id="colaReproduccion"><img href=""></button>
     </footer>
-    </div>
-
-     <div class="mostrar nomostrar" id="inisesion"> <!--ventanita de inicio de sesion-->
-        <form>
-            <label for="usuario">Usuario</label>
-            <input type="text" id="nombre" name="nombre">
-            <label for="contraseña">Contraseña</label>
-            <input type="text" id="contraseña" name="nombre">
-            <button id="enter">Enter</button>
-        </form>
-    </div>
-
-    <div class="mostrar nomostrar" id="perfil">
-
-
-    </div>
-    <div class ="mostrar nomostrar" id="Artistas">
-
-    </div>
-    <div class="mostrar nomostrar" id="genero">
-
-    </div>
-    <div class="mostrar nomostrar" id="playlsit">
-
-    </div>
-     
-
 </body>
 </html>

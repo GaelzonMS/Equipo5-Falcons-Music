@@ -1,137 +1,195 @@
-* {
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/Inter.ttf");
+}
+body{
+  display: flex;
+  background-image: url("../media/background.png");
+  background-size: cover;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-.mostrar{ /*con js agregamos la clase no mostrar para que se*/
-  display: block;
-}
-.mostrar.nomostrar {
-  display: none;
-}
-
-body {
+#botones{
   display: flex;
-  font-family: 'Arial', sans-serif;
-  background-color: #00aa00;
-  color: #fff;
+  position:fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgb(31,26,26);
+  justify-content: start;
+  margin: 0;
+  padding: 5%;
+  width:10%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "inter";
+  border-radius: 2% 0 0 2%;
+  color:rgb(255, 255, 255);
 }
-
-.sidebar {
-  width: 200px;
-  background-color: #111;
-  color: white;
-  padding: 20px;
-  height: 100vh;
-  position: fixed;
+#imgperfil{
+  position:sticky;
+  width:20px;
+  height: 20px;
+  padding: 0 10px 0 0;
+  border-radius: 50%;
 }
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  margin: 10px 0;
+.asideP{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  padding: 3% 0 10% 0;
+  align-content: space-around;
 }
-
-.main-content {
-  margin-left: 200px;
-  width: calc(100% - 200px);
-  background-color: #00aa00;
+.asideBtns{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  border: none;
+  padding: 5% 0 5% 0;
+  align-content: space-between;
+  font-size: 13px;
+  font-family: "inter";
+  font-weight: bold;
+  background-color: rgb(31, 26, 26);
+  color:rgb(255, 255, 255);
 }
-
-.hero {
-  background-image: url('../images/concert.jpg');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 80px 20px;
-  color: white;
-  position: relative;
-}
-
-.search-bar {
+#buscador{
+  display: flex;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px;
-  width: 200px;
-  border-radius: 10px;
-  border: none;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.start-btn {
-  padding: 10px 20px;
-  background-color: black;
-  color: white;
-  border: none;
+  flex-wrap:wrap;
+  background-color: rgb(18,18, 18);
   border-radius: 20px;
-  cursor: pointer;
+  width: 20%;
+  height: 3%;
+  top: 10px;
+  left: 22%;
+  color:rgb(255, 255, 255);
 }
-
-.carousel-section {
-  padding: 30px;
-  text-align: center;
-}
-
-.carousel-track {
+#nombrePagina{
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px;
+  position: absolute;
+  flex-wrap:wrap;
+  font-family: "inter";
+  font-weight: bold;
+  font-size: 60px;
+  top: 20px;
+  right: 7%;
+  color:rgb(5, 56, 50);
 }
-
-.carousel-track img {
-  height: 120px;
-  border-radius: 10px;
-}
-
-.carousel-button {
-  background-color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.lists {
+footer{
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.lists h3 {
-  margin-bottom: 10px;
-}
-
-.lists ol,
-.lists ul {
-  list-style: none;
-}
-
-.player {
-  background-color: #002020;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
+  position: fixed;
+  flex-grow: row wrap;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
   align-items: center;
+  background-color: rgb(5, 56, 50);
 }
-
-.controls button {
-  margin: 0 5px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
+#cancionArtista{
+  flex-direction: column;
+  position: absolute;
+  left: 4%;
+  width: 15%;
+  font-family: "inter";
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+}
+#imagCancion{
+  left: 3%;
+  width: 3%;
+  height: 3%;
+}
+#cancionReproducida{
+  font-weight: bold;
+}
+#favBtn{
+  flex-direction: column;
+  position: absolute;
+  left: 25%;
+  width:2.5%;
+  height: 30%;
+}
+#pastSong{
+  flex-direction: column;
+  position: absolute;
+  left: 30%;
+  width: 3%;
+  height: 40%;
+}
+#playPausa{
+  flex-direction: column;
+  position: absolute;
+  left: 35%;
+  width: 3%;
+  height: 50%;
+}
+#postSong{
+  flex-direction: column;
+  position: absolute;
+  left: 40%;
+  width: 3%;
+  height: 40%;
+}
+#colaReproduccion{
+  flex-direction: column;
+  position: absolute;
+  width: 3%;
+  height: 50%;
+  right: 3%;
+}
+#PaginaPrincipal{
+  display:flex;
+  position: absolute;
+  top: 60%;
+  left:25%;
+}
+.carrusel{
+  position:relative;
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.carrusel-track{
+  display:flex;
+  transition: transform 0.5s ease-in-out;
+  gap:10px;
+}
+.album{
+  min-width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+.carrousel-btn{
+  background-color:darkgray;
+  border:none;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  padding:10px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+}
+.prev{
+  left:0;
+}
+.next{
+  right:0;
+}
+#recomendaciones{
+  background: #121212;
+  color:white;
+  padding:20px;
+  border-radius:10px;
+  margin:20px auto;
+  width:50%;
+}
+.listaCanciones li{
+  padding:10px 0;
+  border-bottom:1px solid #3333;
 }
