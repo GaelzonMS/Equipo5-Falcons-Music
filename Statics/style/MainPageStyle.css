@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.mostrar{ /*con js agregamos la clase no mostrar para que se*/
+  display: block;
+}
+.mostrar.nomostrar {
+  display: none;
+}
 
 body {
   display: flex;
