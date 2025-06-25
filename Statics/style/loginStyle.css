@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    src: url("../fonts/Coolvetica\ Rg.otf");
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#inicioSesion{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    background-color: #1B1A1A;
+    color: white;
+}
+
+#foto-login{
+    border-radius: 50%;
+    width: 14.8%;
+    height: 2%;
+}
+
+.input{
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #41593E;
+}
+
+#bienvenida-container{
+    width: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+}
+
+#bienvenida{
+    margin-right: 50px;
+    width: 70%;
+    color: #053832;
+    font-size:xx-large;
+    text-align:end;
+}
+
+form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+}
+
+#inicioSesion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#login-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+button{
+    background-color: #41593E;
+    color: white;
+    border: none;
+}
+
+.error{
+    color: rgb(175, 0, 0);
+}
