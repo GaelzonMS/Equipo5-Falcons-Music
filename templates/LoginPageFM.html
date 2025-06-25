@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falcon's Musica - Inicio sesión</title>
+    <title>Falcon's Music - Inicio sesión</title>
     <link rel="stylesheet" href="../Statics/style/loginStyle.css">
 </head>
 <body>
@@ -15,10 +15,12 @@
             <form id="loginForm">
                 <label for="usuario">Nombre de usuario:</label>
                 <br>
+                <span id="error-usuario" class="error"></span>
                 <input type="text" class="input" id="usuario" minlength="5" maxlength="13" placeholder="Escriba su usuario" required>
                 <br>
                 <label for="contraseña">Contraseña:</label>
                 <br>
+                <span id="error-contraseña" class="error"></span>
                 <input type="password" class="input" id="contraseña" placeholder="Escriba su contraseña" required>
                 <br>
                 <button type="submit" id="iniciar">Entrar</button>
@@ -31,5 +33,7 @@
             <h1>Bienvenido a Falcon's Music</h1>
         </div>
     </section>
+
+    <script src="../Dynamics/js/inicioSesion.js"></script>
 </body>
 </html>
