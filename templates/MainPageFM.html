@@ -7,16 +7,23 @@
     <title>Falcon's Music</title>
 </head>
 <body>
-    <aside id="botones">
-        <p id="nombre"><img id="imgperfil" href="">Perfil</p>
-        <p class="asideP">NAVEGAR</p>
-        <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
-        <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
-        <div><button class="asideBtns" id="btnArtistas">ARTISTAS</button></div>
-        <p class="asideP" id="libreria">LIBRERIA</p>
-        <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
-        <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
-    </aside>
+     <!--sidebar-->
+     <aside class="sidebar">
+    <div class="profile">👤 Perfil</div>
+    <nav class="menu">
+      <a href="#">NAVEGAR</a>
+      <a href="#">GENERO</a>
+      <a href="#">PLAYLIST</a>
+      <a href="#">ARTISTAS</a>
+      <a href="#">LIBRERÍA</a>
+    </nav>
+    <div class="fav">
+      <p>FAVORITOS</p>
+      <a href="#">Agregar playlist</a>
+    </div>
+  </aside><!--lo podemos convertir a botones que nos lleven <a href="perfil.html"> Chequenlo si quieren-->
+
+    <!--Navegador y nombre de la página-->
     <nav>
         <form>
             <input type="text" name="buscador" id="buscador" placeholder="Buscar">
@@ -26,20 +33,28 @@
             <img id="logo" src="">
         </div>
     </nav>
+
+    <!--Sección Home-->
     <section id="PaginaPrincipal">
         <div><img id="imgDecoracion" src=""></div>
 
+    <!--Top Albumes Carrusel-->
         <div id="carrusel" class="carrusel">
+            <h4>Top Albumes del momento</h4>
             <button class="carrusel.btn prev">&#10094;</button>
             <div class="carrusel-track">
-                <img src="album1.jpg" alt="Álbum 1" class="album"><!--Es solo un ejemplo de como
-                se van a declarar las imagenes para el carrusel-->
-            </div>
+                <img src="album1.jpg" alt="Álbum 1" class="album">
             <button class ="carrusel-btn next">&#10095;</button>
-           
         </div>
-        <div id="">
-            <h2>Mas escuchados</h2>
+        <!--Mas escuchados y recomendaciones-->
+        <div>
+            <h3 id="mas-escuchados">Más escuchados</h3>
+            <ol>
+                <li>01 Bad Feeling-Jagwar Twin</li>
+                <li>02 Immortals-Fall Out Boy</li>
+                <li>03 Radioactive-Imagine Dragons</li>
+                <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
+            </ol>
         </div>
     </section>
 
@@ -50,11 +65,9 @@
             <li> Canción 2 - Artista</li>
             <li> Canción 3 - Artista</li>
         </ul>
-
-    <section>
-
     </section>
 
+    <!--footer player-->
     <footer>
         <div id="cancionArtista">
             <p id="artistaCancionR"><img id="imagCancion" href="../Statics/media/background.png">Artista</p>

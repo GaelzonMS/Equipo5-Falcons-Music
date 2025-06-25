@@ -1,3 +1,10 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: "inter";
     src: url("../fonts/Inter.ttf");
@@ -6,6 +13,8 @@ body{
     display: flex;
     background-image: url("../media/background.png");
     background-size: cover;
+    background-color: #00aa00;
+    color:#ffff;
     margin: 0;
     padding: 0;
 }
@@ -54,15 +63,15 @@ body{
     color:rgb(255, 255, 255);
 }
 #buscador{
-    display: flex;
     position: absolute;
     flex-wrap:wrap;
     background-color: rgb(18,18, 18);
-    border-radius: 20px;
-    width: 20%;
-    height: 3%;
-    top: 10px;
-    left: 22%;
+    border-radius: 10px;
+    border:none;
+    top:20px;
+    left:20px;
+    padding:10px;
+    width:200px;
     color:rgb(255, 255, 255);
 }
 #nombrePagina{
@@ -146,7 +155,7 @@ footer{
 }
 .carrusel{
     position:relative;
-    width:80%;
+    width: 100%;
     margin:auto;
     overflow:hidden;
     display:flex;
@@ -154,26 +163,20 @@ footer{
 }
 .carrusel-track{
     display:flex;
+    overflow-x: auto;
+    gap:20px;
+    padding:10px;
     transition: transform 0.5s ease-in-out;
-    gap:10px;
 }
-.album{
-    min-width:200px;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
+.carrusel-track img{
+    height:120px;
+    border-radius: 10px;
 }
 .carrousel-btn{
-    background-color:darkgray;
+    background-color: white;
     border:none;
-    color:white;
-    font-size:24px;
-    cursor:pointer;
     padding:10px;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:1;
+    cursor:pointer;
 }
 .prev{
     left:0;
@@ -184,12 +187,13 @@ footer{
 #recomendaciones{
     background: #121212;
     color:white;
-    padding:20px;
+    padding:40px;
     border-radius:10px;
     margin:20px auto;
     width:50%;
 }
 .listaCanciones li{
-    padding:10px 0;
-    border-bottom:1px solid #3333;
+    display: flex;
+    justify-content: space-around;
+    padding:20px;
 }
