@@ -9,9 +9,9 @@
 <body>
     <section id="inicioSesion">
         <div id="login-container">
-            <div><img id="foto-login" src="../Statics/media/foto-login.webp"></div>
-            <div id="sesion"><h2>Inicia Sesión</h2></div>
+            <img id="foto-login" src="../Statics/media/foto-login.webp">
             <br>
+            <div id="sesion"><h2>Inicie Sesión</h2></div>
             <form id="loginForm">
                 <label for="usuario">Nombre de usuario:</label>
                 <br>
@@ -20,11 +20,14 @@
                 <label for="contraseña">Contraseña:</label>
                 <br>
                 <input type="password" class="input" id="contraseña" placeholder="Escriba su contraseña" required>
+                <br>
+                <button type="submit">Entrar</button>
             </form>
+            <article>Si no estas registrado <a href="./crearCuenta.html" style="color: rgb(2, 105, 2);">Crear cuenta</a></article>
         </div>
     </section>
-    <section>
-        <div id="NombrePlataforma">
+    <section id="bienvenida-container">
+        <div id="bienvenida">
             <h1>Bienvenido a Falcon's Music</h1>
         </div>
     </section>
