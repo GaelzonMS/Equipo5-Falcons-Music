@@ -1,4 +1,6 @@
 #agregar-container{
+    margin: 6px 0px 6px 0px;
     position: absolute;
+    border: none;
     background-color: white;
 }
