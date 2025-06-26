@@ -232,16 +232,22 @@ footer{
   margin: 0%;
   filter: invert(1);
 }
+
 #PaginaPrincipal{
   display:flex;
+  flex-direction:column;
+  margin-left:5%;
+  margin-right: 5%;
+  margin: 100px;
   position: absolute;
-  top: 60%;
-  left:25%;
+  padding-top: 10%;
+  padding-left:11%;
+  padding-bottom:200px;
 }
 /* ===== CARRUSEL COMPACTO DE ÁLBUMES ===== */
 .music-carousel-container {
-    width: 90%;
-    max-width: 800px;
+    width: 93%;
+    max-width: 900px;
     margin: 20px auto;
     position: relative;
 }
@@ -402,19 +408,29 @@ footer{
         font-size: 0.8rem;
     }
 }
-#recomendaciones{
-  flex-wrap: wrap;
-  background: #121212;
-  color:white;
-  padding:20px;
+.song-section{
+  background:rgba(0, 0, 0, 0.6);
+  padding:10px;
   border-radius:10px;
-  margin:20px auto;
-  width:50%;
+  margin:20px auto 10px auto;
+  color:white;
+  font-family: "Inter", sans-serif;
+  width:80%;
+
 }
-.listaCanciones li{
-  flex-wrap: wrap;
-  padding:10px 0;
-  border-bottom:1px solid #3333;
+.song-list{
+  list-style:none;
+  padding:0px;
+  margin:0;
+}
+.song-list li{
+  padding:12px 10px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  cursor:pointer;
+  transition: 0.2s ease;
+}
+.song-list li:hover{
+  background:rgba(255,255,255,0.1);
 }
 
 /* regresar al inicio de sesion */

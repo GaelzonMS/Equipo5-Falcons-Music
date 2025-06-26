@@ -42,36 +42,30 @@
     <!-- Sección del Carrusel Compacto -->
 <div class="music-carousel-container">
   <h3 class="carousel-title">Álbumes destacados</h3>
-  <div class="music-carousel">
-    <button class="carousel-btn prev-btn">‹</button>
-    <div class="carousel-track" id="album-carousel">
+    <div class="music-carousel">
+        <button class="carousel-btn prev-btn">‹</button>
+            <div class="carousel-track" id="album-carousel">
       <!-- JS insertará álbumes aquí -->
+            </div>
+        <button class="carousel-btn next-btn">›</button>
     </div>
-    <button class="carousel-btn next-btn">›</button>
-  </div>
 </div>
 
         <!--Mas escuchados y recomendaciones-->
-        <div>
+        <div class="song-section">
             <h3 id="mas-escuchados">Más escuchados</h3>
-            <ol>
-                <li>01 Bad Feeling-Jagwar Twin</li>
-                <li>02 Immortals-Fall Out Boy</li>
-                <li>03 Radioactive-Imagine Dragons</li>
-                <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
-            </ol>
+            <ul class="sond-list" id="mas-escuchados-lista">
+                <!--Se agregaran desde el JS-->
+            </ul>
         </div>
     
-
-        <div class="recommendations">
-           <h2>Recomendaciones</h2>
-           <ul class="listaCanciones">
-                <li> Canción 1 - Artista</li>
-                <li> Canción 2 - Artista</li>
-                <li> Canción 3 - Artista</li>
-             </ul>
+        <!--Recomendaciones-->
+        <div class="song-section">
+           <h3>Recomendaciones</h3>
+           <ul class="song-list" id="recomendaciones-lista">
+                <!--se agregaran desde el JS-->
+            </ul>
         </div>     
-    </section>
 
     <footer>
         <div id="cancionArtista">
