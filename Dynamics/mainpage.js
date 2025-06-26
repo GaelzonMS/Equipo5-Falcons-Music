@@ -141,3 +141,12 @@ const btn_iniciosesion = document.getElementById("btn-iniciosesion");
 btn_iniciosesion.addEventListener("click", function() {
     window.location.assign("../templates/LoginPageFM.html"); 
 });
+
+
+//funcion para ir a la vista de artistas 
+
+btn_artistas = document.getElementById("btnArtistas");
+
+btn_artistas.addEventListener("click", function() {
+    window.location.assign("../templates/ArtistsPage.html"); 
+});

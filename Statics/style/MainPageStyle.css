@@ -27,6 +27,7 @@ body{
   border-radius: 0 2% 2% 0;
   color:rgb(255, 255, 255);
 }
+
 #imgperfil{
   position:sticky;
   width:20px;
@@ -62,6 +63,7 @@ body{
 /* ====== FIN DE ESTILO DE BARRA LATERAL ====== */
 #buscador{
   margin-top: 30px;
+  margin-left: 25px;
   display: flex;
   position: absolute;
   flex-wrap:wrap;
