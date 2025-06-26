@@ -21,6 +21,19 @@ const generos= baseDatosJSON.genero;
 const inputDuracion = document.getElementById("duracion");
 const playPauseBtn = document.getElementById("playPausa");
 
+function setBtnCancion(){
+    let r= Math.floor(Math.random() * (numCanciones));
+    artista.textContent= `${canciones[r].artista}`;
+    artistaCR.textContent= `${canciones[r].artista}`;
+    nomCancion.textContent= `${canciones[r].nombre}`;
+    cancionCR.textContent= `${canciones[r].nombre}`;
+    player.loadVideoById(canciones[r].link);
+    let a= canciones[r].id_album -1;
+    imagCancion.setAttribute("src", `${albumes[a].url_img}`);
+    albumImgCR.setAttribute("src", `${albumes[a].url_img}`);
+    return canciones[r].link;
+}
+
 function onPlayerReady(event) {
     duracion = player.getDuration();
     player.playVideo();
@@ -47,7 +60,7 @@ function onPlayerStateChange(event){
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
-        videoId: "cWppAbqm9I8",
+        videoId: `${videoId}`,
         playerVars: {
             controls: 0,
             modestbranding: 1,

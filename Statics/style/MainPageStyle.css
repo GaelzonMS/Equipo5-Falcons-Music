@@ -291,6 +291,55 @@ footer{
   font-size: 20px;
   padding: 5%;
 }
+.cancionCola{
+  display: flex;
+  flex-grow: row wrap;
+  background-color:rgb(0, 0, 0);
+  width: 90%;
+  height: 3%;
+  padding: 2% 3% 2% 3%;
+  margin: 0;
+}
+.playCRBtn{
+  display: flex;
+  flex-grow: row wrap;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  width: 60%;
+  height: 100%;
+}
+.colaBtnC{
+  justify-content: start;
+  align-items: center;
+  padding: .5%;
+  margin: 0%;
+  width: 15px;
+  height: 80%;
+  border: none;
+  background-color: rgb(0, 0, 0);
+}
+.imagBtnCR{
+  position: sticky;
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
+}
+.nomCR{
+  flex-grow: row wrap;
+  font-weight: bold;
+  font-family: "inter";
+  font-size: 5px;
+  color: rgb(255, 255, 255);
+}
+.artCr{
+  flex-grow: row wrap;
+  font-family: "inter";
+  font-size: 5px;
+  color: rgb(255, 255, 255);
+}
 /* ====== FIN DE ESTILO DE CR ====== */
 #PaginaPrincipal{
   display:flex;
