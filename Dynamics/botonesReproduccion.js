@@ -2,11 +2,24 @@ let player;
 let duracion = 0;
 let updateInterval;
 let videoId= "cWppAbqm9I8";
+let barrasMostrar= 0;
+let artista= document.getElementById("artistaCancionR");
+let nomCancion= document.getElementById("cancionReproducida");
+let imagCancion= document.getElementById("imagCancion");
+let barrasBtn= document.getElementById("colaReproduccion");
+let playPauseImg= document.getElementById("playImg");
+let colaReproduccion= document.getElementById("colaRepro");
+let artistaCR= document.getElementById("artistaCancionCR");
+let cancionCR= document.getElementById("cancionReproducidaCR");
+let albumImgCR= document.getElementById("albumImag");
 
+const canciones = baseDatosJSON.canciones;
+const numCanciones= canciones.length;
+const artistas= baseDatosJSON.artistas;
+const albumes= baseDatosJSON.album;
+const generos= baseDatosJSON.genero;
 const inputDuracion = document.getElementById("duracion");
 const playPauseBtn = document.getElementById("playPausa");
-let playPauseImg= document.getElementById("playImg");
-//const duracion = document.getElementById("duracion");
 
 function onPlayerReady(event) {
     duracion = player.getDuration();
@@ -60,4 +73,22 @@ playPauseBtn.addEventListener("click", () => {
 inputDuracion.addEventListener("input", () => {
     let seekTo = inputDuracion.value;
     player.seekTo(seekTo, true);
+});
+
+barrasBtn.addEventListener("click", () => {
+    console.log("si jala");
+    if (barrasMostrar === 0){
+        barrasMostrar=1;
+        console.log("Si mostrar");
+    }
+    else {
+        barrasMostrar=0;
+        console.log("No mostrar");
+    }
+    if(barrasMostrar === 1){
+        colaReproduccion.style.display = "flex";
+    }
+    if(barrasMostrar === 0){
+        colaReproduccion.style.display = "none";
+    }
 });
