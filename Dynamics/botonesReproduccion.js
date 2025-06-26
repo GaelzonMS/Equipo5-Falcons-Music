@@ -2,12 +2,27 @@ let player;
 let duracion = 0;
 let updateInterval;
 let videoId= "cWppAbqm9I8";
-let canciones = baseDatosJSON.canciones;
-let numCanciones= canciones.length;
+let artista= document.getElementById("artistaCancionR");
+let nomCancion= document.getElementById("cancionReproducida");
+let imagCancion= document.getElementById("imagCancion");
+
+const canciones = baseDatosJSON.canciones;
+const numCanciones= canciones.length;
+const artistas= baseDatosJSON.artistas;
+const albumes= baseDatosJSON.album;
+const generos= baseDatosJSON.genero;
 
 function setBtnCancion(){
     let r= Math.floor(Math.random() * (numCanciones));
+    artista.textContent= `${canciones[r].artista}`;
+    nomCancion.textContent= `${canciones[r].nombre}`;
     player.loadVideoById(canciones[r].link);
+    let a= canciones[r].id_album -1;
+    imagCancion.setAttribute("src", `${albumes[a].url_img}`);
+    imagCancion.onerror = () => {
+        console.error("No se pudo cargar la imagen.");
+        imagCancion.setAttribute("src", "./Statics/media/default.png");
+    };
     return canciones[r].link;
 }
 
