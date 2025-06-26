@@ -25,9 +25,10 @@
 
     <!--Navegador y nombre de la página-->
     <nav>
-        <form>
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar">
-        </form>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+
+        <div id="resultados"> </div>
+
         <div>
             <h2 id="nombrePagina">Falcon's Music</h2>
             <img id="logo" src="">
@@ -83,6 +84,9 @@
         <button id="postSong"><img href=""></button>
         <button id="colaReproduccion"><img href=""></button>
     </footer>
+    <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
+    <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
+    <script src="../Dynamics/buscador.js" ></script>
 </body>
 </html>

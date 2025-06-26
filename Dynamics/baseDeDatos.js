@@ -1,4 +1,4 @@
-const baseDatosJSON = {
+window.baseDatosJSON = {
   canciones: [
     {
       id: 1,
