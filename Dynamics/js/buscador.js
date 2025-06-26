@@ -28,7 +28,7 @@ function mostrarResultados(canciones) {
       <p><strong>Álbum:</strong> ${cancion.album}</p>
       <a href="https://youtu.be/${cancion.link}" target="_blank">Ver en YouTube</a>
     </div>
-  `).join('');
+  `).join(''); // para que no se concatenen 
 }
 
 // me es mas facil relacionar primero las funciones y despues el resultado 
