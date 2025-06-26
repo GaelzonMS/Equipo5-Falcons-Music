@@ -10,9 +10,10 @@
   </head>
 
   <body>
-    <!--sidebar-->
 
-    <aside id="botones">
+    <!--sidebar izquierda-->
+
+    <aside id="botones"> 
       <p id="nombre"><img id="imgperfil" href="">Perfil</p>
       <button  id="btn-iniciosesion"> inicio sesion</button>
       <p class="asideP">NAVEGAR</p>
@@ -24,62 +25,66 @@
       <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
     </aside>
 
-    <!--Navegador y nombre de la página-->
-    <nav>
-      <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+    <main id="PaginaPrincipal">
 
-      <div id="resultados"> </div>
+      <!--Navegador y nombre de la página-->
+      <nav>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar">
 
-      <div>
-        <h2 id="nombrePagina">Falcon's Music</h2>
-        <img id="logo" src="">
-      </div>
-    </nav>
+        <div id="resultados"> </div>
 
-    <!--Sección Home-->
-    <section id="PaginaPrincipal">
-
-      <div><img id="imgDecoracion" src=""></div>
-
-      <!-- Sección del Carrusel Compacto -->
-      <div class="music-carousel-container">
-        <h3 class="carousel-title">Álbumes destacados</h3>
-        <div class="music-carousel">
-          <button class="carousel-btn prev-btn">‹</button>
-          <div class="carousel-track" id="album-carousel">
-            <!-- JS insertará álbumes aquí -->
-          </div>
-          <button class="carousel-btn next-btn">›</button>
+        <div>
+          <h2 id="nombrePagina">Falcon's Music</h2>
+          <img id="logo" src="">
         </div>
-      </div>
+      </nav>
 
-      <!--Mas escuchados y recomendaciones-->
+      <!--Sección Home-->
+      <section id="PaginaPrincipal">
 
-      <div>
-        <h3 id="mas-escuchados">Más escuchados</h3>
-        <ol>
-          <li>01 Bad Feeling-Jagwar Twin</li>
-          <li>02 Immortals-Fall Out Boy</li>
-          <li>03 Radioactive-Imagine Dragons</li>
-          <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
-        </ol>
-      </div>
+        <!--<div><img id="imgDecoracion" src=""></div>-->
+
+        <!-- Sección del Carrusel Compacto -->
+        <div class="music-carousel-container">
+          <h3 class="carousel-title">Álbumes destacados</h3>
+          <div class="music-carousel">
+            <button class="carousel-btn prev-btn">‹</button>
+            <div class="carousel-track" id="album-carousel">
+              <!-- JS insertará álbumes aquí -->
+            </div>
+            <button class="carousel-btn next-btn">›</button>
+          </div>
+        </div>
+
+        <!--Mas escuchados y recomendaciones-->
+
+        <div>
+          <h3 id="mas-escuchados">Más escuchados</h3>
+          <ol>
+            <li>01 Bad Feeling-Jagwar Twin</li>
+            <li>02 Immortals-Fall Out Boy</li>
+            <li>03 Radioactive-Imagine Dragons</li>
+            <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
+          </ol>
+        </div>
     
-
-      <div class="recommendations">
-        <h2>Recomendaciones</h2>
-        <ul class="listaCanciones">
-          <li> Canción 1 - Artista</li>
-          <li> Canción 2 - Artista</li>
-          <li> Canción 3 - Artista</li>
-        </ul>
-     </div>    
+        <div class="recommendations">
+          <h2>Recomendaciones</h2>
+          <ul class="listaCanciones">
+            <li> Canción 1 - Artista</li>
+            <li> Canción 2 - Artista</li>
+            <li> Canción 3 - Artista</li>
+          </ul>
+        </div>    
            
-    </section>
+      </section>
+    </main>
 
-    <!--Reproductor-->
-
-    <div id="player"></div>
+    <!--Sidebar De Reproducción de video-->
+    <aside id="sidebarVideo">
+      <!--Reproductor-->
+      <div id="player"></div>
+    </aside>
 
     <footer>
 

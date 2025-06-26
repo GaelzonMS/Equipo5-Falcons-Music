@@ -2,8 +2,11 @@
   font-family: "inter";
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 }
+
+/* contiene las tres etiquetas escenciales (asides y main) */
 body{
   display: flex;
+  flex-wrap: nowrap;
   background-image: url("../media/background.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,18 +14,22 @@ body{
   min-height: fit-content;
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
 }
+
 /* ====== ESTILO DE BARRA LATERAL ====== */
+
+
 #botones{
   display: flex;
-  position:fixed;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   background-color: rgb(31,26,26);
-  justify-content: start;
+  justify-content: center;
   margin: 0;
   padding: 5%;
-  width:10%;
+  width:7%;
   height: 100%;
   font-weight: bold;
   font-size: 13px;
@@ -64,7 +71,17 @@ body{
   cursor: pointer;
   color: #007E00;
 }
+
 /* ====== FIN DE ESTILO DE BARRA LATERAL ====== */
+
+/* ====== ESTILO DE LA PAGINA PRINCIPAL ====== */
+
+#PaginaPrincipal{
+  width: 63%;
+  height: 100%;
+
+}
+
 #buscador{
   margin-top: 30px;
   margin-left: 25px;
@@ -97,6 +114,19 @@ body{
   right: 30px;
   color:rgb(5, 56, 50);
 }
+
+/* ====== FIN DE ESTILO DE LA PAGINA PRINCIPAL ====== */
+
+/* ====== ESTILO DE LA BARRA DE VIDEO ====== */
+
+#sidebarVideo{
+  width: 30%;
+  height: 100%;
+  background-color: rgb(31,26,26);
+}
+
+/* ====== FIN DE LA BARRA DE VIDEO ====== */
+
 footer{
   display: flex;
   position: fixed;
@@ -232,12 +262,7 @@ footer{
   margin: 0%;
   filter: invert(1);
 }
-#PaginaPrincipal{
-  display:flex;
-  position: absolute;
-  top: 60%;
-  left:25%;
-}
+
 /* ===== CARRUSEL COMPACTO DE ÁLBUMES ===== */
 .music-carousel-container {
     width: 90%;
