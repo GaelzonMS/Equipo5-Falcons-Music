@@ -2,7 +2,7 @@ let player;
 let duracion = 0;
 let updateInterval;
 let videoId= "cWppAbqm9I8";
-let barrasMostrar= 0;
+let barrasMostrar= 1;
 let artista= document.getElementById("artistaCancionR");
 let nomCancion= document.getElementById("cancionReproducida");
 let imagCancion= document.getElementById("imagCancion");
