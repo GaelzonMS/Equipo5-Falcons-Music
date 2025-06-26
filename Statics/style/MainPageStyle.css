@@ -300,13 +300,36 @@ footer{
   padding: 2% 3% 2% 3%;
   margin: 0;
 }
+.imgBtnPlayCr{
+  position: sticky;
+  flex-wrap: wrap;
+  width: 20px;
+  height: 20px;
+  padding: 0%;
+  margin: 0%;
+  border-radius: 50%;
+}
 .playCRBtn{
   display: flex;
   flex-grow: row wrap;
   border: none;
   background-color: rgb(0, 0, 0);
-  width: 60%;
+  color: rgb(255, 255, 255);
+  font-size: 5px;
+  font-family: "inter";
+  width: 70%;
   height: 100%;
+}
+.nomCR{
+  flex-grow: row wrap;
+  font-weight: bold;
+  font-family: "inter";
+  font-size: 5px;
+  color: rgb(255, 255, 255);
+  padding: 2%;
+}
+.artCR{
+  padding: 2%;
 }
 .colaBtnC{
   justify-content: start;
@@ -326,19 +349,6 @@ footer{
   padding: 0%;
   margin: 0%;
   filter: invert(1);
-}
-.nomCR{
-  flex-grow: row wrap;
-  font-weight: bold;
-  font-family: "inter";
-  font-size: 5px;
-  color: rgb(255, 255, 255);
-}
-.artCr{
-  flex-grow: row wrap;
-  font-family: "inter";
-  font-size: 5px;
-  color: rgb(255, 255, 255);
 }
 /* ====== FIN DE ESTILO DE CR ====== */
 #PaginaPrincipal{

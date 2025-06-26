@@ -12,6 +12,10 @@ let colaReproduccion= document.getElementById("colaRepro");
 let artistaCR= document.getElementById("artistaCancionCR");
 let cancionCR= document.getElementById("cancionReproducidaCR");
 let albumImgCR= document.getElementById("albumImag");
+let nomCR =document.querySelectorAll(".nomCR");
+let artCR =document.querySelectorAll(".artCR");
+let imgBtnPlayCr= document.querySelectorAll(".imgBtnPlayCr");
+let listaReproduccion= [];
 
 const canciones = baseDatosJSON.canciones;
 const numCanciones= canciones.length;
@@ -21,17 +25,33 @@ const generos= baseDatosJSON.genero;
 const inputDuracion = document.getElementById("duracion");
 const playPauseBtn = document.getElementById("playPausa");
 
+function setColaReproducción(maxLista, espacio){
+    for (let i=0; i < maxLista; i++){
+        let r= Math.floor(Math.random() * (numCanciones));
+        let a = canciones[r].id_album - 1;
+        listaReproduccion[espacio]= r;
+        artCR[i].textContent= `${canciones[r].artista}`;
+        nomCR[i].textContent= `${canciones[r].nombre}`;
+        imgBtnPlayCr[i].setAttribute("src", `${albumes[a].url_img}`);
+        console.log(artCR[i], nomCR[i], imgBtnPlayCr[i]);
+        espacio += 1;
+    }
+    console.log(listaReproduccion);
+}
 function setBtnCancion(){
-    let r= Math.floor(Math.random() * (numCanciones));
+    let r=listaReproduccion[0];
+    let a= canciones[r].id_album -1;
     artista.textContent= `${canciones[r].artista}`;
     artistaCR.textContent= `${canciones[r].artista}`;
     nomCancion.textContent= `${canciones[r].nombre}`;
     cancionCR.textContent= `${canciones[r].nombre}`;
     player.loadVideoById(canciones[r].link);
-    let a= canciones[r].id_album -1;
+    updateInterval = setInterval(() => {
+        duracion = player.getDuration();
+        inputDuracion.max = duracion;
+    }, 1000);
     imagCancion.setAttribute("src", `${albumes[a].url_img}`);
     albumImgCR.setAttribute("src", `${albumes[a].url_img}`);
-    return canciones[r].link;
 }
 
 function onPlayerReady(event) {
@@ -55,6 +75,7 @@ function onPlayerStateChange(event){
         }
     if (event.data === YT.PlayerState.ENDED) {
         clearInterval(updateInterval);
+        setColaReproducción(1, 3);
     }
 }
 
@@ -73,6 +94,7 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         },
     });
+    setColaReproducción(3, 0);
 }
 
 playPauseBtn.addEventListener("click", () => {
