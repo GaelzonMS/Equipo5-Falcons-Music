@@ -320,3 +320,15 @@ footer{
   padding:10px 0;
   border-bottom:1px solid #3333;
 }
+
+/* regresar al inicio de sesion */
+
+#btn-iniciosesion
+{
+  background-color: rgba(19, 97, 10, 0.8);
+}
+
+#btn-iniciosesion:hover
+{
+  background-color: rgba(14, 74, 7, 1);
+}

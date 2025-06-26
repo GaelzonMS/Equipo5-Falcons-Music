@@ -133,3 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
 });
+
+// funcion para regresar a la vista de inicio de sesion 
+
+const btn_iniciosesion = document.getElementById("btn-iniciosesion");
+
+btn_iniciosesion.addEventListener("click", function() {
+    window.location.assign("../templates/LoginPageFM.html"); 
+});
