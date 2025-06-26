@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon's Music</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/style/MainPageStyle.css">
     <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
-    <link rel="stylesheet" href="../Statics/style/playlistStyle.css">
     <title>Falcon's Music</title>
 </head>
 <body>
@@ -21,9 +28,7 @@
         <p class="asideP" id="libreria">LIBRERIA</p>
         <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
         <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
-        <div>
-            <article id="agregar-container"> <input type="text" id="nombrePlaylist" minlength="5" maxlength="13" placeholder="Nombre de la playlist" required></article>
-        </div>
+        <div></div>
       </aside>
 
     <!--Navegador y nombre de la página-->
@@ -38,44 +43,11 @@
         </div>
     </nav>
 
-    <!--Sección Home-->
-    <section id="PaginaPrincipal">
-        <div><img id="imgDecoracion" src=""></div>
+    <section id="seccion-playlist">
 
-    <!-- Sección del Carrusel Compacto -->
-<div class="music-carousel-container">
-  <h3 class="carousel-title">Álbumes destacados</h3>
-  <div class="music-carousel">
-    <button class="carousel-btn prev-btn">‹</button>
-    <div class="carousel-track" id="album-carousel">
-      <!-- JS insertará álbumes aquí -->
-    </div>
-    <button class="carousel-btn next-btn">›</button>
-  </div>
-</div>
-
-        <!--Mas escuchados y recomendaciones-->
-        <div>
-            <h3 id="mas-escuchados">Más escuchados</h3>
-            <ol>
-                <li>01 Bad Feeling-Jagwar Twin</li>
-                <li>02 Immortals-Fall Out Boy</li>
-                <li>03 Radioactive-Imagine Dragons</li>
-                <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
-            </ol>
-        </div>
-    
-
-        <div class="recommendations">
-           <h2>Recomendaciones</h2>
-           <ul class="listaCanciones">
-                <li> Canción 1 - Artista</li>
-                <li> Canción 2 - Artista</li>
-                <li> Canción 3 - Artista</li>
-             </ul>
-        </div>     
     </section>
 
+    <!-- footer para los controles de reproduccion -->
     <footer>
         <div id="cancionArtista">
             <p id="artistaCancionR"><img id="imagCancion" href="../Statics/media/background.png">Artista</p>
@@ -87,9 +59,10 @@
         <button id="postSong"><img href=""></button>
         <button id="colaReproduccion"><img href=""></button>
     </footer>
+
+    <!-- scripts para las dimicas de la pagina-->
     <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
-    <script src="../Dynamics/js/crearPlaylist.js"></script>
     <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
     <script src="../Dynamics/js/buscador.js" ></script>
 </body>
