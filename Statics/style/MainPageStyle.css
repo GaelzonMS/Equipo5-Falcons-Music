@@ -107,14 +107,9 @@ body{
   text-align: center;
 }
 #nombrePagina{
-  display: flex;
-  position: absolute;
-  flex-wrap:wrap;
   font-family: "inter";
   font-weight: bold;
   font-size: 40px;
-  top: 20px;
-  right: 30%;
   color:rgb(5, 56, 50);
 }
 /* Subsección del Carrusel */
