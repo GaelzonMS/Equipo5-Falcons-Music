@@ -30,7 +30,7 @@ body{
   font-weight: bold;
   font-size: 13px;
   font-family: "inter";
-  border-radius: 2% 0 0 2%;
+  border-radius: 0 2% 2% 0;
   color:rgb(255, 255, 255);
 }
 #imgperfil{
@@ -150,25 +150,7 @@ footer{
   top: 60%;
   left:25%;
 }
-.carrusel{
-  position:relative;
-  width:80%;
-  margin:auto;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-}
-.carrusel-track{
-  display:flex;
-  transition: transform 0.5s ease-in-out;
-  gap:10px;
-}
-.album{
-  min-width:200px;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
-}
+
 .carrousel-btn{
   background-color:darkgray;
   border:none;
@@ -209,3 +191,4 @@ footer{
     left: 25%;
     background-color: #121212;
 }
+
