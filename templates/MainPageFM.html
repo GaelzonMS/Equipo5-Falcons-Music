@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/style/MainPageStyle.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
+=======
+    <script src="../Dynamics/baseDeDatos.js"></script>
+>>>>>>> ReproduccionCanciones
     <title>Falcon's Music</title>
 </head>
 <body>
@@ -74,14 +78,17 @@
 
     <footer>
         <div id="cancionArtista">
-            <p id="artistaCancionR"><img id="imagCancion" href="../Statics/media/background.png">Artista</p>
+            <p id="artistaCancionR"><img id="imagCancion" src="../Statics/media/background.png">Artista</p>
             <p id="cancionReproducida">Canción reproduciendose</p>
         </div>
-        <button id="favBtn"><img href=""></button>
-        <button id="pastSong"><img href=""></button>
-        <button id="playPausa"><img href=""></button>
-        <button id="postSong"><img href=""></button>
-        <button id="colaReproduccion"><img href=""></button>
+        <button id="favBtn"><img id="favImg" src="../Statics/media/star-regular.png"></button>
+        <button id="pastSong"><img id="pastImg" src="../Statics/media/backward-solid.png"></button>
+        <button id="playPausa"><img id="playImg" src="../Statics/media/pause-solid.png"></button>
+        <input type="range" min="0" max="50" value="0" id="duracion">
+        <button id="postSong"><img id="postImg" src="../Statics/media/forward-solid.png"></button>
+        <button id="colaReproduccion"><img id="repImg" src="../Statics/media/bars-solid.png"></button>
+        <script src="https://youtube.com/iframe_api"></script>
+        <script src="../Dynamics/botonesReproduccion.js"></script>
     </footer>
     <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
