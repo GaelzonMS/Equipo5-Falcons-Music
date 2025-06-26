@@ -112,20 +112,27 @@ footer{
   flex-direction: column;
   position: absolute;
   flex-wrap: wrap;
-  left: 4%;
+  left: 8%;
   width: 15%;
   font-family: "inter";
   font-size: 10px;
   color: rgb(255, 255, 255);
 }
-#imagCancion{
-  flex-wrap: wrap;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
 #cancionReproducida{
   font-weight: bold;
+}
+#imagCancion{
+  position: absolute;
+  flex-direction: row;
+  flex-wrap: wrap;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
 }
 #favBtn{
   flex-direction: column;
