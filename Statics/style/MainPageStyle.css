@@ -9,6 +9,7 @@ body{
   margin: 0;
   padding: 0;
 }
+/* ====== ESTILO DE BARRA LATERAL ====== */
 #botones{
   display: flex;
   position:fixed;
@@ -23,7 +24,7 @@ body{
   font-weight: bold;
   font-size: 13px;
   font-family: "inter";
-  border-radius: 2% 0 0 2%;
+  border-radius: 0 2% 2% 0;
   color:rgb(255, 255, 255);
 }
 #imgperfil{
@@ -48,22 +49,36 @@ body{
   padding: 5% 0 5% 0;
   align-content: space-between;
   font-size: 13px;
-  font-family: "inter";
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   background-color: rgb(31, 26, 26);
   color:rgb(255, 255, 255);
 }
+
+.asideBtns:hover{
+  cursor: pointer;
+  color: #007E00;
+}
+/* ====== FIN DE ESTILO DE BARRA LATERAL ====== */
 #buscador{
+  margin-top: 30px;
   display: flex;
   position: absolute;
   flex-wrap:wrap;
   background-color: rgb(18,18, 18);
   border-radius: 20px;
-  width: 20%;
-  height: 3%;
+  width: 40%;
+  height: 7%;
   top: 10px;
   left: 22%;
   color:rgb(255, 255, 255);
+}
+#buscador::placeholder{
+  color: rgba(255, 255, 255, 0.451);
+  font-family: "inter";
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 }
 #nombrePagina{
   display: flex;
