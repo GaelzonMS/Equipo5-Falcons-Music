@@ -22,7 +22,7 @@ function buscarCanciones(texto) {
 // Mostrar resultados
 function mostrarResultados(canciones) {
   resultadosDiv.innerHTML = canciones.map(cancion => `
-    <div class="cancion">
+    <div class="cancion-resultado">
       <h3>${cancion.nombre}</h3>
       <p><strong>Artista:</strong> ${cancion.artista}</p>
       <p><strong>Álbum:</strong> ${cancion.album}</p>
@@ -40,3 +40,8 @@ function mostrarResultados(canciones) {
 buscador.addEventListener("input", (e) => {
   mostrarResultados(buscarCanciones(e.target.value));
 });
+
+// elimina los resultados cuando no hay focus en el buscador
+buscador.addEventListener("blur", (e) =>{
+  resultadosDiv.innerHTML = '';
+})
