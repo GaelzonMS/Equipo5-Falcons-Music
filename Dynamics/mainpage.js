@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.innerHTML = '';
     
     // Tomar solo los primeros 6 álbumes
-    const displayedAlbums = albums.slice(0, 6);
+    const displayedAlbums = albums.slice(0, 12);
     
     // Crear elementos para cada álbum
     displayedAlbums.forEach(album => {
         try {
             const albumItem = document.createElement('div');
-            albumItem.className = 'album-item';
+            albumItem.className = 'album-card';
             albumItem.dataset.id = album.id;
             
             // Usar imagen de placeholder si url_img no está definida
@@ -115,5 +115,21 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error al crear álbum:', album, error);
         }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('album-carousel');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    const scrollAmount = 160; // Ajusta al ancho de tu tarjeta + gap
+
+    prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
 });
