@@ -15,7 +15,7 @@ body{
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
 }
 
 /* ====== ESTILO DE BARRA LATERAL IZQUIERDA ====== */
@@ -130,10 +130,15 @@ body{
 
 /* Subsección de Mas escuchados y recomendados */
 
-#seccionMasEscuchadosYRecomendados{
+#seccionMasEscuchadosRecomendaciones{
+  box-sizing: border-box;
   width: 100%;
   height: 40%;
-  background-color: rgb(148, 188, 154);
+  background-color: rgb(174, 204, 178);
+}
+
+#mas-escuchados{
+  margin:0;
 }
 /* ====== FIN DE ESTILO DE LA PAGINA PRINCIPAL ====== */
 
@@ -147,7 +152,7 @@ body{
 
 /* ====== FIN DE LA BARRA DE VIDEO ====== */
 
-footer{
+#footerReproduccion{
   display: flex;
   position: fixed;
   flex-grow: row wrap;
@@ -294,6 +299,7 @@ footer{
     color: #fff;
     font-family: "Inter", sans-serif;
     padding-left: 5px;
+    margin: 0%;
 }
 
 .music-carousel {
