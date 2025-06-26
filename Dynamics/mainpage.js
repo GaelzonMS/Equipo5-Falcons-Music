@@ -150,3 +150,31 @@ btn_artistas = document.getElementById("btnArtistas");
 btn_artistas.addEventListener("click", function() {
     window.location.assign("../templates/ArtistsPage.html"); 
 });
+
+function renderAlbumSections(){
+  const masEscuchadosContainer = document.getElementById('mas-escuchados');
+  const recomendacionesContainer = document.getElementById('recomendados');
+
+  if(!masEscuchadosContainer || !recomendacionesContainer){
+    console.error('Faltan contenedores para "mas escuchados" o "recomendados"');
+    return;
+  }
+  const masEscuchados=albums.slice(0,6);
+  const recomendados=albums.slice(6);
+
+  function createCard(album){
+    return `
+    <div class="album-card">
+                <img class="album-cover" src="${album.url_img}" alt="${album.title}" 
+                     onerror="this.src='https://via.placeholder.com/120'"></img>
+                <div class="album-info"></div>
+                    <h4 class="album.titlle">${album.title}</h4>
+                    <p class="album.artist">${album.artist}</p>
+                </div>
+    </div>   
+    `;             
+  }
+  masEscuchadosContainer.innerHTML=masEscuchados.map(createCard).join('');
+  recomendacionesContainer.innerHTML=recomendados.map(createCard).join('');
+
+}
