@@ -2,6 +2,14 @@ let player;
 let duracion = 0;
 let updateInterval;
 let videoId= "cWppAbqm9I8";
+let canciones = baseDatosJSON.canciones;
+let numCanciones= canciones.length;
+
+function setBtnCancion(){
+    let r= Math.floor(Math.random() * (numCanciones));
+    player.loadVideoById(canciones[r].link);
+    return canciones[r].link;
+}
 
 const inputDuracion = document.getElementById("duracion");
 const playPauseBtn = document.getElementById("playPausa");
@@ -34,7 +42,7 @@ function onPlayerStateChange(event){
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
-        videoId: "cWppAbqm9I8",
+        videoId: `${videoId}`,
         playerVars: {
             controls: 0,
             modestbranding: 1,

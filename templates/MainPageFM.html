@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/style/MainPageStyle.css">
+    <script src="https://youtube.com/iframe_api"></script>
     <script src="../Dynamics/baseDeDatos.js"></script>
     <title>Falcon's Music</title>
 </head>
@@ -47,9 +48,9 @@
     <section id="recomendaciones"><!--un prototipo nada mas, chequenlo posrfis-->
         <h2>Recomendaciones</h2>
         <ul class="listaCanciones">
-            <li>Canción 1 - Artista</li> 
-            <li> Canción 2 - Artista</li>
-            <li> Canción 3 - Artista</li>
+            <li><button onclick="setBtnCancion()" style="background-color: #121212; border: none; color: rgb(255, 255, 255)">Canción 1 - Artista</button></li> 
+            <li><button onclick="setBtnCancion()" style="background-color: #121212; border: none; color: rgb(255, 255, 255)">Canción 2 - Artista</button></li>
+            <li><button onclick="setBtnCancion()" style="background-color: #121212; border: none; color: rgb(255, 255, 255)">Canción 3 - Artista</button></li>
         </ul>
     </section>
 
@@ -64,7 +65,6 @@
         <input type="range" min="0" max="50" value="0" id="duracion">
         <button id="postSong"><img id="postImg" src="../Statics/media/forward-solid.png"></button>
         <button id="colaReproduccion"><img id="repImg" src="../Statics/media/bars-solid.png"></button>
-        <script src="https://youtube.com/iframe_api"></script>
         <script src="../Dynamics/botonesReproduccion.js"></script>
     </footer>
 </body>
