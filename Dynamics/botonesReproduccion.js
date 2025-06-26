@@ -28,6 +28,9 @@ const playPauseBtn = document.getElementById("playPausa");
 function setColaReproducción(maxLista, espacio){
     for (let i=0; i < maxLista; i++){
         let r= Math.floor(Math.random() * (numCanciones));
+        while (listaReproduccion.indexOf(r) != -1){
+            r= Math.floor(Math.random() * (numCanciones));
+        }
         let a = canciones[r].id_album - 1;
         listaReproduccion[espacio]= r;
         artCR[i].textContent= `${canciones[r].artista}`;
