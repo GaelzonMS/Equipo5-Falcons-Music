@@ -7,16 +7,23 @@
     <title>Falcon's Music</title>
 </head>
 <body>
-    <aside id="botones">
-        <p id="nombre"><img id="imgperfil" href="">Perfil</p>
-        <p class="asideP">NAVEGAR</p>
-        <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
-        <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
-        <div><button class="asideBtns" id="btnArtistas">ARTISTAS</button></div>
-        <p class="asideP" id="libreria">LIBRERIA</p>
-        <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
-        <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
-    </aside>
+     <!--sidebar-->
+     <aside class="sidebar">
+    <div class="profile">👤 Perfil</div>
+    <nav class="menu">
+      <a href="#">NAVEGAR</a>
+      <a href="#">GENERO</a>
+      <a href="#">PLAYLIST</a>
+      <a href="#">ARTISTAS</a>
+      <a href="#">LIBRERÍA</a>
+    </nav>
+    <div class="fav">
+      <p>FAVORITOS</p>
+      <a href="#">Agregar playlist</a>
+    </div>
+  </aside><!--lo podemos convertir a botones que nos lleven <a href="perfil.html"> Chequenlo si quieren-->
+
+    <!--Navegador y nombre de la página-->
     <nav>
         <form>
             <input type="text" name="buscador" id="buscador" placeholder="Buscar">
@@ -26,30 +33,43 @@
             <img id="logo" src="">
         </div>
     </nav>
+
+    <!--Sección Home-->
     <section id="PaginaPrincipal">
         <div><img id="imgDecoracion" src=""></div>
 
-        <div id="carrusel" class="carrusel">
-            <button class="carrusel.btn prev">&#10094;</button>
-            <div class="carrusel-track">
-                <img src="album1.jpg" alt="Álbum 1" class="album"><!--Es solo un ejemplo de como
-                se van a declarar las imagenes para el carrusel-->
-            </div>
-            <button class ="carrusel-btn next">&#10095;</button>
-           
-        </div>
-        <div id="">
-            <h2>Mas escuchados</h2>
-        </div>
-    </section>
+    <!--Top Albumes Carrusel-->
+       <div class="album-carousel">
+  <h2>Álbumes</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#8249;</button>
+    <div class="albums" id="albumList">
+      
+    </div>
+    <button class="carousel-btn next">&#8250;</button>
+  </div>
+</div>
 
-    <section id="recomendaciones"><!--un prototipo nada mas, chequenlo posrfis-->
-        <h2>Recomendaciones</h2>
-        <ul class="listaCanciones">
-            <li> Canción 1 - Artista</li>
-            <li> Canción 2 - Artista</li>
-            <li> Canción 3 - Artista</li>
-        </ul>
+        <!--Mas escuchados y recomendaciones-->
+        <div>
+            <h3 id="mas-escuchados">Más escuchados</h3>
+            <ol>
+                <li>01 Bad Feeling-Jagwar Twin</li>
+                <li>02 Immortals-Fall Out Boy</li>
+                <li>03 Radioactive-Imagine Dragons</li>
+                <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
+            </ol>
+        </div>
+    
+
+        <div class="recommendations">
+           <h2>Recomendaciones</h2>
+           <ul class="listaCanciones">
+                <li> Canción 1 - Artista</li>
+                <li> Canción 2 - Artista</li>
+                <li> Canción 3 - Artista</li>
+             </ul>
+        </div>     
     </section>
 
     <footer>
@@ -63,5 +83,6 @@
         <button id="postSong"><img href=""></button>
         <button id="colaReproduccion"><img href=""></button>
     </footer>
+    <script src="../Dynamics/mainpage.js"></script>
 </body>
 </html>

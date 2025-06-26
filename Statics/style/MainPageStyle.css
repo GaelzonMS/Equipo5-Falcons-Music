@@ -144,42 +144,65 @@ footer{
   top: 60%;
   left:25%;
 }
-.carrusel{
+.album-carousel{
+  padding: 20px;
+  margin:40px 0;
+}
+.carousel-container{
   position:relative;
-  width:80%;
-  margin:auto;
-  overflow:hidden;
+  max-width: 100%;
+  overflow-x:hidden;
+  padding:20px;
+}
+.albums{
   display:flex;
-  align-items:center;
+  justify-content: space-between;
+  gap:20px;
+  padding:20px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
-.carrusel-track{
+.album-card{
+  flex: 0 0 18%; 
+  min-width: 180px; /* Tamaño mínimo por álbum */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
   display:flex;
-  transition: transform 0.5s ease-in-out;
-  gap:10px;
+  flex-direction: row;
+  align-items: center;
 }
-.album{
-  min-width:200px;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
+.album-card:hover {
+    transform: scale(1.05);
 }
-.carrousel-btn{
-  background-color:darkgray;
-  border:none;
-  color:white;
-  font-size:24px;
-  cursor:pointer;
-  padding:10px;
+.album-card img{
+  width: 100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.carousel-btn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  z-index:1;
+  background:rgba(0,0,0,0.7);
+  color:white;
+  border:none;
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor:pointer;
+  z-index:10;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 .prev{
-  left:0;
+  left:-20px;
 }
 .next{
-  right:0;
+  right:-20px;
 }
 #recomendaciones{
   background: #121212;
