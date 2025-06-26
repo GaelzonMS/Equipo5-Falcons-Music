@@ -1,11 +1,30 @@
 /* Se mostraran los artistas en el contenedor 'artistas-container' */
 
-let div_artistas = document.getElementById("artists-container");
+let contador_cont = 1;
+let contador_art = 0;
+let seccionArtistas = document.getElementById("artistas");
 
 for (let artist of baseDatosJSON.artistas){
+    console.log(contador_cont);
+    let container_act = document.getElementById("artists-container" + contador_cont)
+
+    // preparamos un nuevo contenedor de artistas
+    let artistas_container = document.createElement("div");
+    artistas_container.setAttribute("id","artists-container" + (contador_cont + 1));
+    artistas_container.className = "artists-container"
+
+    // preparamos un nuevo espacio de artista
     let div_artista = document.createElement("div");
     div_artista.setAttribute("id", artist.nombre);
     div_artista.className = "artista-container";
     div_artista.innerHTML = `<div class="fotoArtista"><img href=${artist.url_img}></div> <divclass="nombreArtista"><p>${artist.nombre}</p></div>`;
-    div_artistas.appendChild(div_artista);
+
+    console.log(div_artista)
+    container_act.appendChild(div_artista);
+    contador_art ++;
+
+    if(contador_art%4 == 0){
+        contador_cont ++;
+        seccionArtistas.appendChild(artistas_container);
+    }
 }
