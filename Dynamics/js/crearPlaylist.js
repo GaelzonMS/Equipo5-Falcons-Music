@@ -6,6 +6,12 @@ let btn_crearPlaylist = document.getElementById("btnAgregar");
 let form_newPlaylist = document.getElementById("agregar-container");
 let inp_nombrePlaylist = document.getElementById("nombrePlaylist");
 
+// seccion para el boton de playlist, para cambiar de pestaña
+let boton_playlists = document.getElementById("btnPlaylist");
+boton_playlists.addEventListener("click", ()=>{
+    window.location.assign("./vistaPlaylist.html");
+})
+
 // es para desplegar div de las playlist
 function mostrar_playlists (){
     let espacioListas = document.getElementById("contenedores-playlist"); // contenedores de las playlist
@@ -32,7 +38,11 @@ function mostrar_playlists (){
                 nombre = nombre.replace('"', ":  ")
                 let playlist_act = nombre.replaceAll('"', "");
                 div_playlist.className = "playlist-container";
-                div_playlist.innerHTML =`<div class="fotoArtista"><img src="../Statics/media/foto_playlist.png" class="foto"></div><div class="nombreArtista"><p style="text-align: center;">${playlist_act}</p></div>`;
+                div_playlist.innerHTML =`<div class="fotoArtista">
+                                            <img src="../Statics/media/foto_playlist.png" class="foto">
+                                        </div><div class="nombreArtista">
+                                        <p style="text-align: center;">${playlist_act}</p>
+                                        </div>`;
                 espacio_act.appendChild(div_playlist);
             }
 
