@@ -222,6 +222,10 @@ footer{
     margin: 20px;
 }
 
+.artista-container:hover{
+  background: rgba(5, 56, 50, 1);
+}
+
 .foto{
     width: 100px;
     height: 100px;
