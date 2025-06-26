@@ -38,10 +38,10 @@ function mostrarResultados(canciones) {
 //referencia al elemento buscador por su id (globalmemte)
 
 buscador.addEventListener("input", (e) => {
-  mostrarResultados(buscarCanciones(e.target.value));
+  if(e.target.value == ''){ // comprueba que el input de buscador no este vacio
+    resultadosDiv.innerHTML = '';
+  }else{
+    mostrarResultados(buscarCanciones(e.target.value));
+  }
+  
 });
-
-// elimina los resultados cuando no hay focus en el buscador
-buscador.addEventListener("blur", (e) =>{
-  resultadosDiv.innerHTML = '';
-})
