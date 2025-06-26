@@ -113,5 +113,73 @@ footer{
     color: white;
     background-color: #121212;
 }
+#gentcont{
+   display: flex;
+
+
+}
+
+
+#tarcarr {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+
+.artista-img {
+   width: 100px;       /* ancho deseado */
+  height: 100px;      /* alto deseado */
+  object-fit: cover;  /* recorta bien si no es cuadrada */
+  border-radius: 50%; /* esto las hace redondas */
+ 
+  margin: 0 auto;     /* centra la imagen */
+  display: block;
+}
+#tarcarr {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+
+  /* Mostrar solo 4 imágenes visibles (ancho) */
+  width: 100%; /* O el ancho que desees */
+  max-width: 420px; /* 4 * (100px ancho + 16px gap aprox) */
+  margin: 0 auto;
+  scrollbar-width: none; /* Firefox: ocultar scrollbar */
+}
+
+/* Para ocultar scrollbar en Chrome/Safari/Edge */
+#tarcarr::-webkit-scrollbar {
+  display: none;
+}
+
+.artista-img {
+  flex: 0 0 auto;  /* Para que no se estire ni encoja */
+  width: 22vw;      /* ancho relativo para que cambie con pantalla */
+  max-width: 100px; /* no más grande que 100px */
+  min-width: 80px;  /* no más pequeño que 80px */
+  height: auto;     /* altura automática para mantener proporción */
+  aspect-ratio: 1 / 1; /* fuerza que sea cuadrada */
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.artista-nombre {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.artista-descripcion {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 5px;
 
 
