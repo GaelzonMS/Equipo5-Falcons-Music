@@ -27,23 +27,19 @@
 
     <main id="PaginaPrincipal">
 
-      <!--Navegador y nombre de la página-->
-      <nav>
+      <section id="SeccionBuscadorYNombre">
+        <!--Buscador y nombre de la página-->
         <input type="text" name="buscador" id="buscador" placeholder="Buscar">
-
         <div id="resultados"> </div>
-
         <div>
           <h2 id="nombrePagina">Falcon's Music</h2>
           <img id="logo" src="">
         </div>
-      </nav>
+      </section>
 
-      <!--Sección Home-->
-      <section id="PaginaPrincipal">
+      <!--<div><img id="imgDecoracion" src=""></div>-->
 
-        <!--<div><img id="imgDecoracion" src=""></div>-->
-
+      <section id="seccionCarrusel">
         <!-- Sección del Carrusel Compacto -->
         <div class="music-carousel-container">
           <h3 class="carousel-title">Álbumes destacados</h3>
@@ -55,9 +51,10 @@
             <button class="carousel-btn next-btn">›</button>
           </div>
         </div>
+      </section>
 
         <!--Mas escuchados y recomendaciones-->
-
+      <section id="seccionMasEscuchadosRecomendaciones">
         <div>
           <h3 id="mas-escuchados">Más escuchados</h3>
           <ol>
@@ -76,11 +73,11 @@
             <li> Canción 3 - Artista</li>
           </ul>
         </div>    
-           
       </section>
     </main>
 
     <!--Sidebar De Reproducción de video-->
+
     <aside id="sidebarVideo">
       <!--Reproductor-->
       <div id="player"></div>

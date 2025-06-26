@@ -18,7 +18,7 @@ body{
   height: 100vh;
 }
 
-/* ====== ESTILO DE BARRA LATERAL ====== */
+/* ====== ESTILO DE BARRA LATERAL IZQUIERDA ====== */
 
 
 #botones{
@@ -28,8 +28,7 @@ body{
   background-color: rgb(31,26,26);
   justify-content: center;
   margin: 0;
-  padding: 5%;
-  width:7%;
+  width:10%;
   height: 100%;
   font-weight: bold;
   font-size: 13px;
@@ -77,11 +76,17 @@ body{
 /* ====== ESTILO DE LA PAGINA PRINCIPAL ====== */
 
 #PaginaPrincipal{
-  width: 63%;
+  width: 65%;
   height: 100%;
-
 }
 
+/* Subseccion de buscador y nombre de pagina */
+
+#SeccionBuscadorYNombre{
+  width: 100%;
+  height: 35%;
+  background-color: rgb(29, 41, 31);
+}
 #buscador{
   margin-top: 30px;
   margin-left: 25px;
@@ -96,6 +101,7 @@ body{
   left: 22%;
   color:rgb(255, 255, 255);
 }
+
 #buscador::placeholder{
   color: rgba(255, 255, 255, 0.451);
   font-family: "inter";
@@ -114,13 +120,27 @@ body{
   right: 30px;
   color:rgb(5, 56, 50);
 }
+/* Subsección del Carrusel */
 
+#seccionCarrusel{
+  width: 100%;
+  height: 25%;
+  background-color: rgba(19, 97, 10, 0.8);
+}
+
+/* Subsección de Mas escuchados y recomendados */
+
+#seccionMasEscuchadosYRecomendados{
+  width: 100%;
+  height: 40%;
+  background-color: rgb(148, 188, 154);
+}
 /* ====== FIN DE ESTILO DE LA PAGINA PRINCIPAL ====== */
 
 /* ====== ESTILO DE LA BARRA DE VIDEO ====== */
 
 #sidebarVideo{
-  width: 30%;
+  width: 25%;
   height: 100%;
   background-color: rgb(31,26,26);
 }
@@ -267,15 +287,12 @@ footer{
 .music-carousel-container {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto;
     position: relative;
 }
 
 .carousel-title {
     color: #fff;
     font-family: "Inter", sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
     padding-left: 5px;
 }
 
