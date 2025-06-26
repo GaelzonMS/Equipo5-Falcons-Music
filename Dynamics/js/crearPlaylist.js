@@ -8,23 +8,39 @@ let inp_nombrePlaylist = document.getElementById("nombrePlaylist");
 
 // es para desplegar div de las playlist
 function mostrar_playlists (){
-    let aside_btns = document.getElementById("botones"); // barra de botones lateras
+    let espacioListas = document.getElementById("contenedores-playlist"); // contenedores de las playlist
 
-    let cookies = document.cookie;
-    console.log(cookies)
+    let contador_cont = 1;
+    let contador_list = 0;
+
+    const cookies = document.cookie.split(";");
 
     if(cookies != ''){
         for(let cookie of cookies){
+            let espacio_act = document.getElementById("artists-container" + contador_cont)
+
+            // preparamos un nuevo contenedor de listas
+            let espacioLista = document.createElement("div");
+            espacioLista.setAttribute("id","artists-container" + (contador_cont + 1));
+            espacioLista.className = "contenedores";
+
             let div_playlist = document.createElement("div"); // nuevo contenedor para la playlist
             let [nombre, canciones] = cookie.split("=");
-            console.log(nombre);
+            nombre = decodeURIComponent(nombre);
+
             if(nombre.indexOf("playlist") != -1){
-                let playlist_act = nombre;
-                div_playlist.textContent = playlist_act;
-                aside_btns.appendChild(div_playlist);
+                nombre = nombre.replace('"', ":  ")
+                let playlist_act = nombre.replaceAll('"', "");
+                div_playlist.className = "playlist-container";
+                div_playlist.innerHTML =`<div class="fotoArtista"><img src="../Statics/media/foto_playlist.png" class="foto"></div><div class="nombreArtista"><p style="text-align: center;">${playlist_act}</p></div>`;
+                espacio_act.appendChild(div_playlist);
+            }
+
+            if(contador_list%4 == 0){
+                contador_cont ++;
+                espacioListas.appendChild(espacioLista);
             }
         }
-
     }
 }
 
@@ -51,8 +67,15 @@ form_newPlaylist.addEventListener("submit", (e)=>{
     }
 
     document.cookie = `${"playlist" + nombre_playlist}=${encodeURIComponent(JSON.stringify(datos))}; max-age=${duration_playlist}`;
-
+    form_newPlaylist.style.display = "none";
     mostrar_playlists();
 })
 
 mostrar_playlists();
+
+let boton_cerrar = document.getElementById("cerrar");
+if(boton_cerrar != null){
+        boton_cerrar.addEventListener("click", ()=>{
+        window.location.assign("./MainPageFM.html");
+    })
+}
