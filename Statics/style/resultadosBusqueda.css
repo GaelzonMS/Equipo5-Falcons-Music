@@ -16,7 +16,7 @@
 
 .cancion-resultado{
     width: 100%;
-    height: 30%;
+    height: 70%;
     display: flex;
     padding: 20px;
     color: rgb(168, 168, 168);
@@ -29,6 +29,7 @@
 }
 
 .cancion-resultado > p{
+    text-align: center;
     width: 30%;
     height: 90%;
     margin: 0;
