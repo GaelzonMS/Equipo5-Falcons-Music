@@ -22,7 +22,10 @@
         <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
         <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
         <div> 
-            <article id="agregar-container" style="display: none;"> <input type="text" id="nombrePlaylist" minlength="5" maxlength="13" placeholder="Nombre de la playlist" required></article>
+            <form  id="agregar-container" style="display: none;">
+                <input type="text" id="nombrePlaylist" minlength="5" maxlength="20" placeholder="Nombre de la playlist" required>
+                <button type="submit" id="crearPL">Agregar</button>
+            </form>
         </div>
       </aside>
 

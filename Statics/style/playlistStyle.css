@@ -1,6 +1,30 @@
 #agregar-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     margin: 6px 0px 6px 0px;
     position: absolute;
+}
+
+#agregar-container > input{
+    margin: 2px;
     border: none;
-    background-color: white;
+    background-color: #007E00;
+    border-radius: 10px;
+    color: white;
+}
+
+#agregar-container > input::placeholder{
+    color: rgb(204, 204, 204);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#agregar-container > button{
+    margin: 2px;
+    border: color(#008a00) solid 3xp;
+    background-color: #008a00;
+    border-radius: 10px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
