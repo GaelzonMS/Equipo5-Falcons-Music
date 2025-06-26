@@ -1,0 +1,211 @@
+@font-face {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    src: url("../fonts/Coolvetica\ Rg.otf");
+}
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+  display: flex;
+  background-image: url("../media/background.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+#botones{
+  display: flex;
+  position:fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgb(31,26,26);
+  justify-content: start;
+  margin: 0;
+  padding: 5%;
+  width:10%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "inter";
+  border-radius: 2% 0 0 2%;
+  color:rgb(255, 255, 255);
+}
+#imgperfil{
+  position:sticky;
+  width:20px;
+  height: 20px;
+  padding: 0 10px 0 0;
+  border-radius: 50%;
+}
+.asideP{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  padding: 3% 0 10% 0;
+  align-content: space-around;
+}
+.asideBtns{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  border: none;
+  padding: 5% 0 5% 0;
+  align-content: space-between;
+  font-size: 13px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  background-color: rgb(31, 26, 26);
+  color:rgb(255, 255, 255);
+}
+#buscador{
+  display: flex;
+  position: absolute;
+  flex-wrap:wrap;
+  background-color: rgb(18,18, 18);
+  border-radius: 20px;
+  width: 20%;
+  height: 3%;
+  top: 10px;
+  left: 22%;
+  color:rgb(255, 255, 255);
+}
+#nombrePagina{
+  display: flex;
+  position: absolute;
+  flex-wrap:wrap;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  right: 7%;
+  color:rgb(5, 56, 50);
+}
+footer{
+  display: flex;
+  position: fixed;
+  flex-grow: row wrap;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  align-items: center;
+  background-color: rgb(5, 56, 50);
+}
+#cancionArtista{
+  flex-direction: column;
+  position: absolute;
+  left: 4%;
+  width: 15%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+}
+#imagCancion{
+  left: 3%;
+  width: 3%;
+  height: 3%;
+}
+#cancionReproducida{
+  font-weight: bold;
+}
+#favBtn{
+  flex-direction: column;
+  position: absolute;
+  left: 25%;
+  width:2.5%;
+  height: 30%;
+}
+#pastSong{
+  flex-direction: column;
+  position: absolute;
+  left: 30%;
+  width: 3%;
+  height: 40%;
+}
+#playPausa{
+  flex-direction: column;
+  position: absolute;
+  left: 35%;
+  width: 3%;
+  height: 50%;
+}
+#postSong{
+  flex-direction: column;
+  position: absolute;
+  left: 40%;
+  width: 3%;
+  height: 40%;
+}
+#colaReproduccion{
+  flex-direction: column;
+  position: absolute;
+  width: 3%;
+  height: 50%;
+  right: 3%;
+}
+#PaginaPrincipal{
+  display:flex;
+  position: absolute;
+  top: 60%;
+  left:25%;
+}
+.carrusel{
+  position:relative;
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.carrusel-track{
+  display:flex;
+  transition: transform 0.5s ease-in-out;
+  gap:10px;
+}
+.album{
+  min-width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+.carrousel-btn{
+  background-color:darkgray;
+  border:none;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  padding:10px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+}
+.prev{
+  left:0;
+}
+.next{
+  right:0;
+}
+#recomendaciones{
+  background: #121212;
+  color:white;
+  padding:20px;
+  border-radius:10px;
+  margin:20px auto;
+  width:50%;
+}
+.listaCanciones li{
+  padding:10px 0;
+  border-bottom:1px solid #3333;
+}
+
+#artistas{
+    display: flex;
+    width: 70vw;
+    height: 75vh;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background-color: #121212;
+}
