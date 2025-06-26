@@ -6,6 +6,9 @@ body{
   display: flex;
   background-image: url("../media/background.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: fit-content;
   margin: 0;
   padding: 0;
 }
@@ -28,6 +31,7 @@ body{
 }
 #imgperfil{
   position:sticky;
+  flex-wrap: wrap;
   width:20px;
   height: 20px;
   padding: 0 10px 0 0;
@@ -73,7 +77,7 @@ body{
   font-weight: bold;
   font-size: 60px;
   top: 20px;
-  right: 7%;
+  right: 30px;
   color:rgb(5, 56, 50);
 }
 footer{
@@ -89,6 +93,7 @@ footer{
 #cancionArtista{
   flex-direction: column;
   position: absolute;
+  flex-wrap: wrap;
   left: 4%;
   width: 15%;
   font-family: "inter";
@@ -96,47 +101,119 @@ footer{
   color: rgb(255, 255, 255);
 }
 #imagCancion{
-  left: 3%;
-  width: 3%;
-  height: 3%;
+  flex-wrap: wrap;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 #cancionReproducida{
   font-weight: bold;
 }
 #favBtn{
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   left: 25%;
-  width:2.5%;
+  width:1.5%;
   height: 30%;
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(5, 56, 50);
+  border: none;
+}
+#favImg{
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
 }
 #pastSong{
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   left: 30%;
-  width: 3%;
+  width: 2%;
   height: 40%;
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(5, 56, 50);
+  border: none;
+}
+#pastImg{
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
 }
 #playPausa{
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   left: 35%;
-  width: 3%;
+  width: 2%;
   height: 50%;
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(5, 56, 50);
+  border: none;
+}
+#playImg{
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
 }
 #postSong{
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   left: 40%;
-  width: 3%;
+  width: 2%;
   height: 40%;
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(5, 56, 50);
+  border: none;
+}
+#postImg{
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
+}
+#duracion{
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  background-color: rgb (0, 0, 0);
 }
 #colaReproduccion{
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
-  width: 3%;
+  width: 2.5%;
   height: 50%;
   right: 3%;
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(5, 56, 50);
+  border: none;
+}
+#repImg{
+  flex-wrap: wrap;
+  width:100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
 }
 #PaginaPrincipal{
   display:flex;
@@ -146,6 +223,7 @@ footer{
 }
 .carrusel{
   position:relative;
+  flex-wrap: wrap;
   width:80%;
   margin:auto;
   overflow:hidden;
@@ -154,10 +232,12 @@ footer{
 }
 .carrusel-track{
   display:flex;
+  flex-wrap: wrap;
   transition: transform 0.5s ease-in-out;
   gap:10px;
 }
 .album{
+  flex-wrap: wrap;
   min-width:200px;
   height:200px;
   object-fit:cover;
@@ -165,6 +245,7 @@ footer{
 }
 .carrousel-btn{
   background-color:darkgray;
+  flex-wrap: wrap;
   border:none;
   color:white;
   font-size:24px;
@@ -176,12 +257,15 @@ footer{
   z-index:1;
 }
 .prev{
+  flex-wrap: wrap;
   left:0;
 }
 .next{
+  flex-wrap: wrap;
   right:0;
 }
 #recomendaciones{
+  flex-wrap: wrap;
   background: #121212;
   color:white;
   padding:20px;
@@ -190,6 +274,7 @@ footer{
   width:50%;
 }
 .listaCanciones li{
+  flex-wrap: wrap;
   padding:10px 0;
   border-bottom:1px solid #3333;
 }
