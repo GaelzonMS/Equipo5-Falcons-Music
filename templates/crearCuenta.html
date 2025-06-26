@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon's Music - Crear cuenta</title>
+    <link rel="stylesheet" href="../Statics/style/loginStyle.css">
+</head>
+<body>
+    <section id="inicioSesion">
+        <div id="login-container">
+            <img id="foto-login" src="../Statics/media/foto-login.webp">
+            <br>
+            <div id="sesion"><h2>Crear cuenta</h2></div>
+            <form id="crearForm">
+                <label for="usuario">Nuevo usuario:</label>
+                <br>
+                <span id="error-user" class="error"></span>
+                <input type="text" class="input" id="usuario" minlength="5" maxlength="13" placeholder="Elija su username" required>
+                <br>
+                <label for="contraseña">Contraseña:</label>
+                <br>
+                <span id="error-contraseña" class="error"></span>
+                <input type="password" class="input" id="contraseña" placeholder="Escriba su contraseña" required>
+                <br>
+                <label for="email">Correo electrónico:</label>
+                <br>
+                <span id="error-gmail" class="error"></span>
+                <input type="email" class="input" name="email" id="email" placeholder="xxxxx@gmail.com">
+                <br>
+                <button type="submit" id="iniciar">Crear</button>
+            </form>
+            <article>Si ya estas registrado <a href="./LoginPageFM.html" style="color: rgb(2, 105, 2);">Iniciar sesión</a></article>
+        </div>
+    </section>
+    <section id="bienvenida-container">
+        <div id="bienvenida">
+            <h1>Bienvenido a Falcon's Music</h1>
+        </div>
+    </section>
+
+    <script src="../Dynamics/js/crearCuenta.js"></script>
+</body>
+</html>
