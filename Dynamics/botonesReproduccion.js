@@ -1,15 +1,20 @@
+/*VARIABLES*/
 let player; //REPRODUCTOR API
 let duracion = 0;//DURACION DEL VIDEO
 let updateInterval;
 let videoId= "";//ID INICIAL DEL VIDEO
 let barrasMostrar= 1;//SI SE MOSTRARÁ O NO LA COLA DE REPRODUCCION
 let listaReproduccion= [];//LISTA DE REPRODUCCION
+let indiceActual=0;
 
 let artista= document.getElementById("artistaCancionR");//NOMBRE DEL ARTISTA EN EL FOOTER
 let nomCancion= document.getElementById("cancionReproducida");//NOMBRE DE LA CANCIÓN EN EL FOOTER
 let imagCancion= document.getElementById("imagCancion");//IMAGEN DEL ÁLBUM DE LA CANCIÓN ACTUAL EN EL FOOTER
 let barrasBtn= document.getElementById("colaReproduccion");//BOTON DE LA COLA DE REPRODUCCIÓN EN EL FOOTER
 let playPauseImg= document.getElementById("playImg");//IMAGEN DEL BOTON DE PLAYPAUSA
+
+const pastSong= document.getElementById("pastSong");//BOTON PARA REGRESAR CANCIÓN
+const postSong= document.getElementById("postSong");//BOTON PARA PONER LA SIGUIENTE CANCIÓN
 const playPauseBtn = document.getElementById("playPausa");//BOTON DE PAUSA
 const inputDuracion = document.getElementById("duracion");//INPUT TIPO RANGE. BARRA DE DURACIÓN
 
@@ -27,6 +32,8 @@ const numCanciones= canciones.length;//NUM DE CANCIONES DE LA BASE DE DATOS
 const artistas= baseDatosJSON.artistas;//ARTISTAS DE LA BASE DE DATOS
 const albumes= baseDatosJSON.album;//ALBUMES DE LA BASE DE DATOS
 
+/*FUNCIONES*/
+
 //FUNCIÓN QUE ESTABLECE LAS CANCIONES EN LA COLA DE REPRODUCCIÓN
 function setColaReproducción(maxLista, espacio){//PARAMETROS DE NUM DE CANCIONES A ASIGNAR Y EL ESPACIO QUE OCUPARAN EN LISTA DE REPRODUCCIÓN
     for (let i=0; i < maxLista; i++){
@@ -43,8 +50,22 @@ function setColaReproducción(maxLista, espacio){//PARAMETROS DE NUM DE CANCIONE
         espacio += 1;//HACER QUE EL VALOR AUMENTE
     }
 }
+pastSong.addEventListener("click", () =>{
+    if(indiceActual > 0){
+        indiceActual -= 1;
+        setBtnCancion();
+        console.log("Que paso");
+    }
+});
+postSong.addEventListener("click", () =>{
+    if(indiceActual < listaReproduccion.length){
+        indiceActual += 1;
+        setBtnCancion();
+        console.log("Que paso");
+    }
+});
 function setBtnCancion(){//FUNCIÓN QUE SE ACTIVA AL HACER CLICK A LOS BOTONES DE COLA DE REPRODUCCIÓN
-    let r=listaReproduccion[0];//VALOR DEL INDICE DE LA LISTA DE REPRODUCCIÓN
+    let r=listaReproduccion[indiceActual];//VALOR DEL INDICE DE LA LISTA DE REPRODUCCIÓN
     let a= canciones[r].id_album -1;//INDICE DEL ALBUM
     //ASIGNAR EL NOMBRE DEL ARTISTA, LA CANCIÓN Y LA IMAGEN DEL ALBUM TANTO EN EL FOOTER COMO EN EL ASIDE
     artista.textContent= `${canciones[r].artista}`;
@@ -105,7 +126,7 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         },
     });
-    setColaReproducción(3, 0);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
+    setColaReproducción(indiceActual + 3, indiceActual);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
 }
 
 //SI SE HACE CLICK EN EL BOTON DE PAUSA, PAUSA O HAS PLAY
