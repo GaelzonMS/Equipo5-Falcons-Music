@@ -76,63 +76,83 @@ const albums = [
     }
 ]
 
-// Asegúrate de que el DOM esté completamente cargado
+// creacion del carrusel
 document.addEventListener('DOMContentLoaded', function() {
-    // Verifica que el elemento existe antes de manipularlo
-    const carousel = document.getElementById('album-carousel');
-    
-    if (!carousel) {
-        console.error('No se encontró el elemento con ID "album-carousel"');
-        return;
-    }
-    
-    // Limpiar el carrusel primero
-    carousel.innerHTML = '';
-    
-    // Tomar solo los primeros 6 álbumes
-    const displayedAlbums = albums.slice(0, 12);
-    
-    // Crear elementos para cada álbum
-    displayedAlbums.forEach(album => {
+  //aqui estan las constantes
+   const contenedorAlbumes = document.getElementById('album-carousel');
+    const botonAnterior = document.querySelector('.prev-btn');
+    const botonSiguiente = document.querySelector('.next-btn');
+
+    //verificar si encontro el album
+if (!contenedorAlbumes){
+  console.log("No se encontro el contenedor del album");
+  return;
+}
+
+//aqui se sucede la magia
+const obtenerPortadaAlbum=(album)=>{
+   if (album.url_img) return album.url_img;
+        if (album.portada_local) return `./assets/albumes/${album.portada_local}`;
+        return 'https://via.placeholder.com/150'; // Imagen local por defecto
+    };
+
+        // Mostrar los primeros 12 álbumes
+    const albumesMostrados = albums.slice(0, 12);
+
+     albumesMostrados.forEach(album => {
         try {
-            const albumItem = document.createElement('div');
-            albumItem.className = 'album-card';
-            albumItem.dataset.id = album.id;
+            const tarjetaAlbum = document.createElement('div');
+            tarjetaAlbum.className = 'tarjeta-album';
+            tarjetaAlbum.dataset.id = album.id;
             
-            // Usar imagen de placeholder si url_img no está definida
-            const imgUrl = album.url_img || 'https://via.placeholder.com/120';
+            const portada = obtenerPortadaAlbum(album);
+            const titulo = album.nombre || album.title || 'Álbum sin título';
+            const artista = album.artist || 'Artista desconocido';
             
-            albumItem.innerHTML = `
-                <img class="album-cover" src="${imgUrl}" alt="${album.nombre || album.title}" 
-                     onerror="this.src='https://via.placeholder.com/120'">
-                <div class="album-info">
-                    <h4 class="album-title">${album.title}</h4>
-                    <p class="album-artist">${album.artist}</p>
+            tarjetaAlbum.innerHTML = `
+                <div class="contenedor-portada">
+                    <img class="portada-album" 
+                         src="${portada}" 
+                         alt="${titulo}"
+                         onerror="this.src='https://via.placeholder.com/150'">
+                </div>
+                <div class="info-album">
+                    <h3 class="titulo-album">${titulo}</h3>
+                    <p class="artista-album">${artista}</p>
                 </div>
             `;
             
-            carousel.appendChild(albumItem);
+            contenedorAlbumes.appendChild(tarjetaAlbum);
         } catch (error) {
-            console.error('Error al crear álbum:', album, error);
-        }
+            console.log(` Error al crear el álbum ${album.id}:`, error);
+             }
+    });
+
+    const desplazamiento = 300; // Puedes ajustar a tu gusto
+
+    //Botón anterior
+ botonAnterior.addEventListener('click', () => {
+        contenedorAlbumes.scrollBy({
+            left: -desplazamiento,
+            behavior: 'smooth'
+        });
+    });
+    
+    //Botón siguiente
+    botonSiguiente.addEventListener('click', () => {
+        contenedorAlbumes.scrollBy({
+            left: desplazamiento,
+            behavior: 'smooth'
+        });
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('album-carousel');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
 
-    const scrollAmount = 160; // Ajusta al ancho de tu tarjeta + gap
 
-    prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
 
-    nextBtn.addEventListener('click', () => {
-        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-});
+
+
+
 
 // funcion para regresar a la vista de inicio de sesion 
 
