@@ -1,9 +1,9 @@
 #perfil-container{
-    width: 110%;
+    width: 10%;
     height: 23%;
     position: absolute;
-    left: 20vw;
-    top: 8vw;
+    left: 12vw;
+    top: 6vw;
     display: flex;
     justify-content: center;
     flex-direction: column;

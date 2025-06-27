@@ -19,6 +19,7 @@ function buscarCanciones(texto) {
   });
 }
 
+//...
 
 // Mostrar resultados
 function mostrarResultados(canciones) {
@@ -27,10 +28,12 @@ function mostrarResultados(canciones) {
       <h3>${cancion.nombre}</h3>
       <p><strong>Artista:</strong> ${cancion.artista}</p>
       <p><strong>Álbum:</strong> ${cancion.album}</p>
-      <a href="https://youtu.be/${cancion.link}" target="_blank">Ver en YouTube</a>
+      <button id="boton-repro" style="color:black" class="reproducir-btn" data-link="${cancion.link}"></button>
     </div>
   `).join(''); // para que no se concatenen 
 }
+
+//       <a href="https://youtu.be/${cancion.link}" target="_blank">Ver en YouTube</a>
 
 // me es mas facil relacionar primero las funciones y despues el resultado 
 

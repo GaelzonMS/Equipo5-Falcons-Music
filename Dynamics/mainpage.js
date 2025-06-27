@@ -162,7 +162,11 @@ btn_iniciosesion.addEventListener("click", function() {
     cerrarSesion();
     window.location.assign("../templates/LoginPageFM.html"); 
 });
-
+//funcion para ir a la ventana de genero
+const btnvistgen = document.getElementById('btnGenero')
+    btnvistgen.addEventListener("click",() =>{
+        window.location.href="../templates/vistGenero.html"
+    })
 
 //funcion para ir a la vista de artistas 
 

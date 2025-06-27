@@ -14,7 +14,8 @@
 body{
   display: flex;
   flex-wrap: nowrap;
-  background-image: url("../media/background.png");
+  /*background-image: url("../media/background.png");*/
+  background-color: #0e420e;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -26,7 +27,6 @@ body{
 }
 
 /* ====== ESTILO DE BARRA LATERAL IZQUIERDA ====== */
-
 
 #botones{
   display: flex;
@@ -102,6 +102,7 @@ body{
   margin : 0;
 }
 
+
 /*div de busqueda y resultados*/
 #busquedayresultados{
   width:60%;
@@ -112,6 +113,7 @@ body{
   justify-content: start;
   align-items: center;
 }
+
 
 /* div de nombre de pagina */
 
@@ -156,6 +158,7 @@ body{
   background-color: rgb(62, 97, 55);
 }
 
+
 /* Subsección de Mas escuchados y recomendados */
 
 #seccionMasEscuchadosRecomendaciones{
@@ -165,10 +168,12 @@ body{
   background-color: rgb(174, 204, 178);
 }
 
+
 #mas-escuchados{
   margin:0;
 }
 /* ====== FIN DE ESTILO DE LA PAGINA PRINCIPAL ====== */
+
 
 /* ====== ESTILO DE LA BARRA DE VIDEO ====== */
 
@@ -176,6 +181,115 @@ body{
   width: 25%;
   height: 100%;
   background-color: rgb(31,26,26);
+}
+
+#player{
+  width: 350px;
+  height: 360px;
+  left: 0px;
+  top: 0px;
+}
+
+.CR{
+  display:flex;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Inter";
+  padding: 0;
+  margin: 0;
+}
+#reproduciendo{
+  justify-content: center;
+  padding: 5%;
+}
+#artistaCancionCR{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 20px;
+  padding: 5%;
+}
+#cancionReproducidaCR{
+  font-size: 20px;
+}
+#albumImag{
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 135px;
+  height: 124px;
+  padding: 5%;
+}
+#player{
+  flex-wrap: wrap;
+  width: 278px;
+  height: 162px;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+#tituloCR{
+  font-size: 20px;
+  padding: 5%;
+}
+.cancionCola{
+  display: flex;
+  flex-grow: row wrap;
+  background-color:rgb(0, 0, 0);
+  width: 90%;
+  height: 3%;
+  padding: 2% 3% 2% 3%;
+  margin: 0;
+}
+.imgBtnPlayCr{
+  position: sticky;
+  flex-wrap: wrap;
+  width: 20px;
+  height: 20px;
+  padding: 0%;
+  margin: 0%;
+  border-radius: 50%;
+}
+.playCRBtn{
+  display: flex;
+  flex-grow: row wrap;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 5px;
+  font-family: "inter";
+  width: 70%;
+  height: 100%;
+}
+.nomCR{
+  flex-grow: row wrap;
+  font-weight: bold;
+  font-family: "inter";
+  font-size: 5px;
+  color: rgb(255, 255, 255);
+  padding: 2%;
+}
+.artCR{
+  padding: 2%;
+}
+.colaBtnC{
+  justify-content: start;
+  align-items: center;
+  padding: .5%;
+  margin: 0%;
+  width: 15px;
+  height: 80%;
+  border: none;
+  background-color: rgb(0, 0, 0);
+}
+.imagBtnCR{
+  position: absolute;
+  flex-wrap: wrap;
+  width:20px;
+  height: 20px;
+  padding: 0%;
+  margin: 0%;
+  filter: invert(1);
 }
 
 /* ====== FIN DE LA BARRA DE VIDEO ====== */
@@ -309,29 +423,22 @@ body{
 }
 #repImg{
   flex-wrap: wrap;
-  width:100%;
-  height: 100%;
+  width:20px;
+  height: 20px;
   padding: 0%;
   margin: 0%;
   filter: invert(1);
 }
-/* ===== CARRUSEL HORIZONTAL ===== */
-#seccionCarrusel {
-  width: 100%;
-  background-color: rgba(62, 97, 55, 0.8);
-  padding: 10px 20px;
-  box-sizing: border-box;
-  margin-top: 0;       /* sin margen arriba */
-  margin-bottom: 10px; /* margen pequeño abajo */
-  border-radius: 10px;
-}
 
+
+/* ===== CARRUSEL COMPACTO DE ÁLBUMES ===== */
 .music-carousel-container {
   width: 100%;
   position: relative;
   margin: 0;            /* sin márgenes extras */
   padding: 0;
 }
+
 
 .carousel-title {
   margin: 0 0 8px 0;    /* título compacto, espacio abajo pequeño */
@@ -341,12 +448,14 @@ body{
   font-size: 1.3rem;
 }
 
+
 .music-carousel {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
+
 
 .carousel-track {
   display: flex;
@@ -358,28 +467,33 @@ body{
   scrollbar-width: none; /* oculta scrollbar en Firefox */
 }
 
+
 .carousel-track::-webkit-scrollbar {
   display: none;        /* oculta scrollbar en Chrome/Safari */
 }
 
-.tarjeta-album {
-  flex: 0 0 auto;
-  width: 100px;
-  height: 120px;
-  transition: transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  color: white;
-  font-family: "Inter", sans-serif;
-  text-align: center;
+
+/* Tarjeta de álbum - TAMAÑO COMPACTO */
+.album-card {
+    flex: 0 0 140px; /* Ancho fijo compacto */
+    scroll-snap-align: start;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.tarjeta-album:hover {
-  transform: scale(1.05);
+
+/* Imagen del álbum - TAMAÑO REDUCIDO */
+.album-cover {
+    width: 100%;
+    height: 70px; /* Altura compacta */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
 }
+
 
 .contenedor-portada {
   height: 70%;
@@ -391,17 +505,20 @@ body{
   object-fit: cover;
 }
 
+
 .titulo-album {
   font-size: 1rem;
   font-weight: bold;
   margin: 4px 0 0 0;
 }
 
+
 .artista-album {
   font-size: 0.9rem;
   color: #ccc;
   margin: 0;
 }
+
 
 /* --- BOTONES DE NAVEGACIÓN --- */
 .carousel-btn {
@@ -432,7 +549,7 @@ body{
   background:rgba(0, 0, 0, 0.6);
   padding:20px;
   border-radius:12px;
-  margin:20px auto 10px auto;
+  margin:10px auto 20px 0;
   color:white;
   font-family: "Inter", sans-serif;
   width:80%;
@@ -516,5 +633,4 @@ body{
 #btn-iniciosesion:hover
 {
   background-color: rgba(14, 74, 7, 1);
-
 }

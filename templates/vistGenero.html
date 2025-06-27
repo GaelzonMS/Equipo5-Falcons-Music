@@ -1,15 +1,13 @@
+html:
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falcon's Music</title>
-    <link rel="stylesheet" href="../Statics/style/artistasPage.css">
+    <link rel="stylesheet" href="../Statics/style/vistgenero.css">
+    <title>Document</title>
 </head>
 <body>
-    <script src="../Dynamics/baseDeDatos.js"></script>
-
-
     <aside id="botones">
         <p id="nombre"><img id="imgperfil" href="">Perfil</p>
         <p class="asideP">NAVEGAR</p>
@@ -21,19 +19,36 @@
         <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
     </aside>
     <nav>
+        <form>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+        </form>
         <div>
             <h2 id="nombrePagina">Falcon's Music</h2>
             <img id="logo" src="">
         </div>
     </nav>
+    <!--vistgen-->
    
-    <section id="artistas">
-            <div style="display: flex; flex-direction: row;"><h2 id="art-encabezado">Artistas</h2><div id="cerrar"><img src="../Statics/media/cerrarVentana.png"></div></div>
-            <div id="contenedores-art">
-                <div id="artists-container1" class="artists-container"></div>
+    <section id="genero">
+           
+        <div style="display: flex; flex-direction: row;"><h2 id="art-encabezado">Genero musical</h2></div>
+        <div id="gencont">
+            
+            <div id="carrart">
+            <button class="atrasbtn"><</button>
+           <div id="tarcarr"></div>
+            <button class="enfrentebtn">></button>
             </div>
-    </section>
 
+
+            </div>
+        </div >    
+
+        <div id="gene">
+
+
+        </div>
+    </section>
 
     <footer>
         <div id="cancionArtista">
@@ -47,12 +62,8 @@
         <button id="colaReproduccion"><img href=""></button>
     </footer>
 
-    <!-- scripts para las dimicas de la pagina-->
-    <script src="../Dynamics/baseDeDatos.js"></script>
-    <script src="../Dynamics/js/ventanaArtistas.js"></script>
-    <script src="../Dynamics/js/crearPlaylist.js"></script>
-    <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
-    <script src="../Dynamics/js/buscador.js" ></script>
-
+       <script src="../Dynamics/baseDeDatos.js"></script> 
+       <script src="../Dynamics/js/vistgen.js"></script>
+        
 </body>
 </html>

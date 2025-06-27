@@ -1,0 +1,223 @@
+/*aqui inicia el css de la barra latteral */
+@font-face {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    src: url("../fonts/Coolvetica\ Rg.otf");
+}
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+  display: flex;
+  background-color: #121212;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+#botones{
+  display: flex;
+  position:fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgb(31,26,26);
+  justify-content: start;
+  margin: 0;
+  padding: 5%;
+  width:10%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "inter";
+  border-radius: 0 2% 2% 0;
+  color:rgb(255, 255, 255);
+}
+#imgperfil{
+  position:sticky;
+  width:20px;
+  height: 20px;
+  padding: 0 10px 0 0;
+  border-radius: 50%;
+}
+.asideP{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  padding: 3% 0 10% 0;
+  align-content: space-around;
+}
+.asideBtns{
+  display: flex;
+  position:sticky;
+  flex-wrap: wrap;
+  border: none;
+  padding: 5% 0 5% 0;
+  align-content: space-between;
+  font-size: 13px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  background-color: rgb(31, 26, 26);
+  color:rgb(255, 255, 255);
+}
+
+.asideBtns:hover{
+  cursor: pointer;
+  color: #007E00;
+}
+#buscador{
+  display: flex;
+  position: absolute;
+  flex-wrap:wrap;
+  background-color: rgb(18,18, 18);
+  border-radius: 20px;
+  width: 20%;
+  height: 3%;
+  top: 10px;
+  left: 22%;
+  color:rgb(255, 255, 255);
+}
+#nombrePagina{
+  display: flex;
+  position: absolute;
+  flex-wrap:wrap;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  right: 7%;
+  color:rgb(5, 56, 50);
+}
+  
+footer{
+  display: flex;
+  position: fixed;
+  flex-grow: row wrap;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  align-items: center;
+  background-color: rgb(5, 56, 50);
+}
+
+/*aqui inicia el css de genero */
+
+
+#genero {
+  width: 70vw;
+  min-height: 75vh;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+#titulo-genero {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+
+#carrart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+#tarcarr {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /*esto quita una barra que tiene por defecto*/
+}
+
+
+
+.artista-img {
+  width: 22vw;
+  max-width: 100px;
+  min-width: 80px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.atrasbtn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+}
+
+
+.enfrentebtn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+}
+
+/* Lista de géneros */
+#gene {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+
+.btngen{
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btngen:hover {
+  background: #1db954;
+}
+
+/*
+.canciones-genero {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.cancion-resultado {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}*/
+
+
+ 

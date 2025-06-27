@@ -66,7 +66,11 @@ btnPerfil.addEventListener("click", ()=>{
                                 <div><article id="mensaje">${mensajePerfil}</article></div>`;
         asideBotones.prepend(divPerfil);
         desplegado = true;
-        divRegresoLogin = document.getElementById("mensaje");
+        divRegresoLogin2 = document.getElementById("mensaje");
+        divRegresoLogin2.addEventListener("click", ()=>{
+            window.location.assign("./LoginPageFM.html");
+            cerrarSesion();
+        })
     } else{
         let divPerfil = document.getElementById("perfil-container");
         divPerfil.style.display = "none";

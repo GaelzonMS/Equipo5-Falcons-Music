@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
     <link rel="stylesheet" href="../Statics/style/perfilStyle.css">
     <script src="../Dynamics/baseDeDatos.js"></script>
+    <link rel="stylesheet" href="../Statics/style/playlistStyle.css">
     <title>Falcon's Music</title>
   </head>
 
@@ -14,7 +15,7 @@
 
     <!--sidebar izquierda-->
 
-    <aside id="botones"> 
+    <aside id="botones">
       <p id="nombre" class="asideBtns"><img id="imgperfil" src="../Statics/media/foto-login.webp">Perfil</p>
       <button  id="btn-iniciosesion"> inicio sesion</button>
       <br><br>
@@ -27,6 +28,12 @@
       <p class="asideP" id="libreria">LIBRERIA</p>
       <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
       <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
+      <div>
+        <form  id="agregar-container" style="display: none;">
+            <input type="text" id="nombrePlaylist" minlength="5" maxlength="20" placeholder="Nombre de la playlist" required>
+            <button type="submit" id="crearPL">Agregar</button>
+        </form>
+    </div>
     </aside>
 
     <main id="PaginaPrincipal">
@@ -59,6 +66,73 @@
     </div>
   </div>
 </section>
+
+        <!--Mas escuchados y recomendaciones-->
+      <section id="mas-escuchados" class="song-section">
+        <h3>Más escuchados</h3>
+        <ul id="mas-escuchados-lista">
+          <!--Se agregaran desde el JS-->
+        </ul>
+      </section>
+ 
+      <!--Recomendaciones-->
+      <section id="recomendados" class="song-section">
+         <h3>Recomendaciones</h3>
+         <ul id="recomendaciones-lista">
+              <!--se agregaran desde el JS-->
+          </ul>
+      </section>    
+    </main>
+
+    <!--Sidebar De Reproducción de video-->
+
+    <aside id="sidebarVideo">
+      <p class="CR" id="reproduciendo">Reproduciendo</p>
+        <p class="CR" id="artistaCancionCR">Canción</p>
+        <p class="CR" id="cancionReproducidaCR"><img id="albumImag">Artista</p>
+        <div id="player"></div>
+        <p class="CR" id="tituloCR">Cola de reproducción</p>
+        <div class="cancionCola">
+            <button onclick="setBtnCancion()" class="playCRBtn">
+                <img class="imgBtnPlayCr" src="../Statics/media/background.png">
+                <p class="nomCR">NOMBRE</p>
+                <p class="artCR">ARTISTA</p>
+            </button>
+            <button class="colaBtnC"><img class="imagBtnCR" src="../Statics/media/circle-minus-solid.png"></button>
+        </div>
+        <div class="cancionCola">
+            <button onclick="setBtnCancion()" class="playCRBtn">
+                <img class="imgBtnPlayCr" src="../Statics/media/background.png">
+                <p class="nomCR">NOMBRE</p>
+                <p class="artCR">ARTISTA</p>
+            </button>
+            <button class="colaBtnC"><img class="imagBtnCR" src="../Statics/media/circle-minus-solid.png"></button>
+        </div>
+        <div class="cancionCola">
+            <button onclick="setBtnCancion()" class="playCRBtn">
+                <img class="imgBtnPlayCr" src="../Statics/media/background.png">
+                <p class="nomCR">NOMBRE</p>
+                <p class="artCR">ARTISTA</p>
+            </button>
+            <button class="colaBtnC"><img class="imagBtnCR" src="../Statics/media/circle-minus-solid.png"></button>
+        </div>
+    </aside>
+
+    <footer id="footerReproduccion">
+
+      <div id="cancionArtista">
+        <p id="artistaCancionR"><img id="imagCancion" src="../Statics/media/background.png">Artista</p>
+        <p id="cancionReproducida">Canción reproduciendose</p>
+      </div>
+
+      <button id="favBtn"><img id="favImg" src="../Statics/media/star-regular.png"></button>
+      <button id="pastSong"><img id="pastImg" src="../Statics/media/backward-solid.png"></button>
+      <button id="playPausa"><img id="playImg" src="../Statics/media/pause-solid.png"></button>
+      <input type="range" min="0" max="50" value="0" id="duracion">
+      <button id="postSong"><img id="postImg" src="../Statics/media/forward-solid.png"></button>
+      <button id="colaReproduccion"><img id="repImg" src="../Statics/media/bars-solid.png"></button>
+      <script src="https://youtube.com/iframe_api"></script>
+      <script src="../Dynamics/botonesReproduccion.js"></script>
 
         <!--Mas escuchados-->
         <section id="mas-escuchados" class="song-section">
@@ -96,6 +170,7 @@
     <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
     <script src="../Dynamics/js/mostrarPerfil.js"></script>
+    <script src="../Dynamics/js/crearPlaylist.js"></script>
     <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
     <script src="../Dynamics/js/buscador.js" ></script>
 
