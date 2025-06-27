@@ -1,10 +1,13 @@
 /* Archivo que creara un playlist dentro de la sidebar
 ** Este servira para todas las vistas*/
 
+let espacioListas = document.getElementById("contenedores-playlist"); // contenedores de las playlist
+let playlist_abierta = false;
 let creando = false;
 let btn_crearPlaylist = document.getElementById("btnAgregar");
 let form_newPlaylist = document.getElementById("agregar-container");
 let inp_nombrePlaylist = document.getElementById("nombrePlaylist");
+let titulo_div = document.getElementById("art-encabezado");
 
 // seccion para el boton de playlist, para cambiar de pestaña
 let boton_playlists = document.getElementById("btnPlaylist");
@@ -14,7 +17,6 @@ boton_playlists.addEventListener("click", ()=>{
 
 // es para desplegar div de las playlist
 function mostrar_playlists (){
-    let espacioListas = document.getElementById("contenedores-playlist"); // contenedores de las playlist
 
     let contador_cont = 1;
     let contador_list = 0;
@@ -44,6 +46,11 @@ function mostrar_playlists (){
                                         <p style="text-align: center;">${playlist_act}</p>
                                         </div>`;
                 espacio_act.appendChild(div_playlist);
+
+                div_playlist.addEventListener("click", ()=>{
+                    espacioListas.style.display = "none";
+                    titulo_div.textContent = nombre.replaceAll('"', "");
+                } )
             }
 
             if(contador_list%4 == 0){
@@ -81,7 +88,10 @@ form_newPlaylist.addEventListener("submit", (e)=>{
     mostrar_playlists();
 })
 
-mostrar_playlists();
+if(playlist_abierta == false){
+    mostrar_playlists();
+    
+}
 
 let boton_cerrar = document.getElementById("cerrar");
 if(boton_cerrar != null){
