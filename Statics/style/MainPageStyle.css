@@ -483,10 +483,23 @@ body{
 
 #btn-iniciosesion
 {
-  background-color: rgba(19, 97, 10, 0.8);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0;
+  margin-left: 5px;;
+  width:80%;
+  height: 3%;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "inter";
+  border-radius: 10% 10% 10% 10%;
+  color:rgb(255, 255, 255);
+  background-color: rgba(41, 126, 32, 0.8);
 }
 
 #btn-iniciosesion:hover
 {
   background-color: rgba(14, 74, 7, 1);
+
 }
