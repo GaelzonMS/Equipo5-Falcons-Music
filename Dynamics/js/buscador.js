@@ -27,7 +27,7 @@ function mostrarResultados(canciones) {
       <h3>${cancion.nombre}</h3>
       <p><strong>Artista:</strong> ${cancion.artista}</p>
       <p><strong>Álbum:</strong> ${cancion.album}</p>
-      <button class="reproducir-btn" data-link="${cancion.link}">Reproducir</button>
+      <button id="boton-repro" style="color:black" class="reproducir-btn" data-link="${cancion.link}">r:</button>
       <a href="https://youtu.be/${cancion.link}" target="_blank">Ver en YouTube</a>
     </div>
   `).join(''); // para que no se concatenen 
