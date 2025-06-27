@@ -19,6 +19,7 @@ function buscarCanciones(texto) {
   });
 }
 
+//...
 
 // Mostrar resultados
 function mostrarResultados(canciones) {
