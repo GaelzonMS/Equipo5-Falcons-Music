@@ -52,21 +52,21 @@
 </div>
 
         <!--Mas escuchados-->
-        <div class="song-section">
-            <h3 id="mas-escuchados">Más escuchados</h3>
-            <ul class="sond-list" id="mas-escuchados-lista">
+        <section id="mas-escuchados" class="song-section">
+            <h3>Más escuchados</h3>
+            <ul id="mas-escuchados-lista">
                 <!--Se agregaran desde el JS-->
             </ul>
-        </div>
+        </section>
     
         <!--Recomendaciones-->
-        <div class="song-section">
-           <h3 id="recomendados">Recomendaciones</h3>
-           <ul class="song-list" id="recomendaciones-lista">
+        <section id="recomendados" class="song-section">
+           <h3>Recomendaciones</h3>
+           <ul id="recomendaciones-lista">
                 <!--se agregaran desde el JS-->
             </ul>
-        </div>     
-        <div id="player"></div>
+        </section>     
+
 
     <footer>
         <div id="cancionArtista">
@@ -79,7 +79,8 @@
         <input type="range" min="0" max="50" value="0" id="duracion">
         <button id="postSong"><img id="postImg" src="../Statics/media/forward-solid.png"></button>
         <button id="colaReproduccion"><img id="repImg" src="../Statics/media/bars-solid.png"></button>
-        <script src="https://youtube.com/iframe_api"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <div id="player" style="display: none;"></div>
         <script src="../Dynamics/botonesReproduccion.js"></script>
     </footer>
     <script src="../Dynamics/baseDeDatos.js"></script>

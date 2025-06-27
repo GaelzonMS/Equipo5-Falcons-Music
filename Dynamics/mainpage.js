@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img class="album-cover" src="${imgUrl}" alt="${album.nombre || album.title}" 
                      onerror="this.src='https://via.placeholder.com/120'">
                 <div class="album-info">
-                    <h4 class="album-title">${album.nombre || album.title}</h4>
-                    <p class="album-artist">${album.artista}</p>
+                    <h4 class="album-title">${album.title}</h4>
+                    <p class="album-artist">${album.artist}</p>
                 </div>
             `;
             
@@ -151,30 +151,198 @@ btn_artistas.addEventListener("click", function() {
     window.location.assign("../templates/ArtistsPage.html"); 
 });
 
-function renderAlbumSections(){
-  const masEscuchadosContainer = document.getElementById('mas-escuchados');
-  const recomendacionesContainer = document.getElementById('recomendados');
+canciones: [
+    {
+      id: 1,
+      nombre: "Wake me up",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "SsYXnH9lzCY",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 2,
+      nombre: "Hey brother",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "69Fb6XozEx8",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 3,
+      nombre: "Alone",
+      artista: "Marshmello",
+      id_artista: 2,
+      album: "Marshmello",
+      id_album: 2,
+      link: "nR5l-1lmkkI",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 4,
+      nombre: "Animals",
+      artista: "Martin Garrix",
+      id_artista: 3,
+      album: "Animals",
+      id_album: 3,
+      link: "2kpAzC2Mja8",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 5,
+      nombre: "Titanium",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "KxnpFKZowcs",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 6,
+      nombre: "Despacito",
+      artista: "Luis Fonsi ft. Daddy Yankee",
+      id_artista: 5,
+      album: "Despacito",
+      id_album: 5,
+      link: "kJQP7kiw5Fk",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 7,
+      nombre: "Shape of You",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "JGwWNGJdvx8",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 8,
+      nombre: "Bohemian Rhapsody",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "fJ9rUzIMcZQ",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 9,
+      nombre: "Viento",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "T8TtE-enslA",
+      genero: "Rock",
+      id_genero: 3
+    }
+  ];
+// Asumiendo que este arreglo de canciones ya está definido en algún lugar
+const canciones = [
+  {
+    id: 1, nombre: "Wake me up", artista: "Avicii", id_album: 1, album: "True", link: "SsYXnH9lzCY"
+  },
+  {
+    id: 2, nombre: "Hey brother", artista: "Avicii", id_album: 1, album: "True", link: "69Fb6XozEx8"
+  },
+  {
+    id: 3, nombre: "Alone", artista: "Marshmello", id_album: 2, album: "Marshmello", link: "nR5l-1lmkkI"
+  },
+  {
+    id: 4, nombre: "Animals", artista: "Martin Garrix", id_album: 3, album: "Animals", link: "2kpAzC2Mja8"
+  },
+  {
+    id: 5, nombre: "Titanium", artista: "David Guetta", id_album: 4, album: "Nothing but the Beat", link: "KxnpFKZowcs"
+  },
+  {
+    id: 6, nombre: "Despacito", artista: "Luis Fonsi ft. Daddy Yankee", id_album: 5, album: "Despacito", link: "kJQP7kiw5Fk"
+  },
+  {
+    id: 7, nombre: "Shape of You", artista: "Ed Sheeran", id_album: 6, album: "Divide", link: "JGwWNGJdvx8"
+  },
+  {
+    id: 8, nombre: "Bohemian Rhapsody", artista: "Queen", id_album: 7, album: "A Night at the Opera", link: "fJ9rUzIMcZQ"
+  },
+  {
+    id: 9, nombre: "Viento", artista: "Caifanes", id_album: 8, album: "Caifanes", link: "T8TtE-enslA"
+  }
+];
 
-  if(!masEscuchadosContainer || !recomendacionesContainer){
-    console.error('Faltan contenedores para "mas escuchados" o "recomendados"');
+// FUNCION para mostrar canciones en ambas secciones
+function renderCanciones() {
+  const masEscuchadosLista = document.getElementById('mas-escuchados-lista');
+  const recomendacionesLista = document.getElementById('recomendaciones-lista');
+
+  if (!masEscuchadosLista || !recomendacionesLista) {
+    console.error('No se encontraron los contenedores de canciones.');
     return;
   }
-  const masEscuchados=albums.slice(0,6);
-  const recomendados=albums.slice(6);
 
-  function createCard(album){
-    return `
-    <div class="album-card">
-                <img class="album-cover" src="${album.url_img}" alt="${album.title}" 
-                     onerror="this.src='https://via.placeholder.com/120'"></img>
-                <div class="album-info"></div>
-                    <h4 class="album.titlle">${album.title}</h4>
-                    <p class="album.artist">${album.artist}</p>
-                </div>
-    </div>   
-    `;             
-  }
-  masEscuchadosContainer.innerHTML=masEscuchados.map(createCard).join('');
-  recomendacionesContainer.innerHTML=recomendados.map(createCard).join('');
+  masEscuchadosLista.innerHTML = '';
+  recomendacionesLista.innerHTML = '';
 
+  // Más escuchadas = primeras 5, Recomendadas = siguientes 4
+  const masEscuchadas = canciones.slice(0, 5);
+  const recomendadas = canciones.slice(5, 9);
+
+ masEscuchadas.forEach(cancion => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="song-title">${cancion.nombre}</span>
+      <span class="song-artist">${cancion.artista}</span>
+    `;
+    li.addEventListener('click', () => reproducirCancion(cancion));
+    masEscuchadosLista.appendChild(li);
+  });
+
+  recomendadas.forEach(cancion => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="song-title">${cancion.nombre}</span>
+      <span class="song-artist">${cancion.artista}</span>
+    `;
+    li.addEventListener('click', () => reproducirCancion(cancion));
+    recomendacionesLista.appendChild(li);
+  });
 }
+
+// FUNCION para actualizar el footer cuando se hace clic
+function reproducirCancion(cancion) {
+  const artistaEl = document.getElementById('artistaCancionR');
+  const cancionEl = document.getElementById('cancionReproducida');
+  const imgEl = document.getElementById('imagCancion');
+
+  const album = albums.find(a => a.id === cancion.id_album);
+
+  artistaEl.textContent = cancion.artista;
+  cancionEl.textContent = cancion.nombre;
+  imgEl.src = album?.url_img || 'https://via.placeholder.com/40';
+
+  if (player && typeof player.loadVideoById === 'function') {
+        player.loadVideoById(cancion.link);
+    } else {
+        console.warn('Reproductor de YouTube no está listo aún.');
+    }
+}
+
+// Llamamos a la función cuando se carga el DOM
+document.addEventListener('DOMContentLoaded', function () {
+  renderCanciones();
+});
+
+
