@@ -99,87 +99,99 @@ footer{
   background-color: rgb(5, 56, 50);
 }
 
-#genero{
-    width: 70vw;
-    height: 75vh;
-    position: absolute;
-    top: 10%;
-    left: 25%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #121212;
-}
-#gentcont{
-   display: flex;
 
-
-}
-
-
-#tarcarr {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-}
-
-
-.artista-img {
-   width: 100px;       /* ancho deseado */
-  height: 100px;      /* alto deseado */
-  object-fit: cover;  /* recorta bien si no es cuadrada */
-  border-radius: 50%; /* esto las hace redondas */
- 
-  margin: 0 auto;     /* centra la imagen */
-  display: block;
-}
-#tarcarr {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-
-  /* Mostrar solo 4 imágenes visibles (ancho) */
-  width: 100%; /* O el ancho que desees */
-  max-width: 420px; /* 4 * (100px ancho + 16px gap aprox) */
+#genero {
+  width: 70vw;
+  min-height: 75vh;
   margin: 0 auto;
-  scrollbar-width: none; /* Firefox: ocultar scrollbar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
-/* Para ocultar scrollbar en Chrome/Safari/Edge */
+#titulo-genero {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+
+#carrart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+#tarcarr {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+}
+
 #tarcarr::-webkit-scrollbar {
-  display: none;
+  display: none; 
 }
 
 .artista-img {
-  flex: 0 0 auto;  /* Para que no se estire ni encoja */
-  width: 22vw;      /* ancho relativo para que cambie con pantalla */
-  max-width: 100px; /* no más grande que 100px */
-  min-width: 80px;  /* no más pequeño que 80px */
-  height: auto;     /* altura automática para mantener proporción */
-  aspect-ratio: 1 / 1; /* fuerza que sea cuadrada */
+  width: 22vw;
+  max-width: 100px;
+  min-width: 80px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
 }
 
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+}
 
-
-.artista-nombre {
-  font-size: 1rem;
-  font-weight: bold;
+/* Lista de géneros */
+#gene {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 10px;
 }
 
-.artista-descripcion {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 5px;
 
+.generos-cont {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
+.generos-cont:hover {
+  background: #1db954;
+}
