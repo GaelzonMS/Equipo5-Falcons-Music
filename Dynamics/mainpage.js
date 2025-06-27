@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const btn_iniciosesion = document.getElementById("btn-iniciosesion");
 
 btn_iniciosesion.addEventListener("click", function() {
+    cerrarSesion();
     window.location.assign("../templates/LoginPageFM.html"); 
 });
 
