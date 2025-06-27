@@ -13,6 +13,7 @@ const playPauseBtn = document.getElementById("playPausa");
 let playPauseImg= document.getElementById("playImg");
 //const duracion = document.getElementById("duracion");
 
+
 function onPlayerReady(event) {
     duracion = player.getDuration();
     player.playVideo();
