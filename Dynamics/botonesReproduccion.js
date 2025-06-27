@@ -1,7 +1,7 @@
 /*VARIABLES*/
 let player; //REPRODUCTOR API
 let duracion = 0;//DURACION DEL VIDEO
-let updateInterval;
+let updateInterval;//ACTUALIZAR Y GUARDAR LA DURACIÓN DEL VIDEO
 let videoId= "";//ID INICIAL DEL VIDEO
 let barrasMostrar= 1;//SI SE MOSTRARÁ O NO LA COLA DE REPRODUCCION
 let listaReproduccion= [];//LISTA DE REPRODUCCION
@@ -35,33 +35,51 @@ const albumes= baseDatosJSON.album;//ALBUMES DE LA BASE DE DATOS
 /*FUNCIONES*/
 
 //FUNCIÓN QUE ESTABLECE LAS CANCIONES EN LA COLA DE REPRODUCCIÓN
-function setColaReproducción(maxLista, espacio){//PARAMETROS DE NUM DE CANCIONES A ASIGNAR Y EL ESPACIO QUE OCUPARAN EN LISTA DE REPRODUCCIÓN
+function setColaReproduccion(maxLista, espacio, random){//PARAMETROS DE NUM DE CANCIONES A ASIGNAR Y EL ESPACIO QUE OCUPARAN EN LISTA DE REPRODUCCIÓN
     for (let i=0; i < maxLista; i++){
-        let r= Math.floor(Math.random() * (numCanciones));//NÚMERO ALEATORIO RANGO 0 AL TOTAL DE CANCIONES
-        while (listaReproduccion.indexOf(r) != -1){//WHILE PARA EVITAR REPETICIONES
+        let r;
+        if(random == -1){//SI SE SELECCIONO RANDOM
+            r = Math.floor(Math.random() * (numCanciones));//NÚMERO ALEATORIO RANGO 0 AL TOTAL DE CANCIONES
+            while (listaReproduccion.indexOf(r) != -1){//WHILE PARA EVITAR REPETICIONES
             r= Math.floor(Math.random() * (numCanciones));//REASIGNAR UN VALOR SI YA EXISTE LA CANCIÓN
         }
+        }
+        else{
+            if(random <=listaReproduccion.lenght - 1){//SI EL ÍDICE DADO ES DE LA LISTA DE REPRODUCCIÓN
+                r= random;//NÚMERO DE ÍNDICE DADO A LA FUNCIÓN
+            }
+            else{
+                r= Math.floor(Math.random() * (numCanciones));//NÚMERO ALEATORIO RANGO 0 AL TOTAL DE CANCIONES
+                while (listaReproduccion.indexOf(r) != -1){//WHILE PARA EVITAR REPETICIONES
+                    r= Math.floor(Math.random() * (numCanciones));//REASIGNAR UN VALOR SI YA EXISTE LA CANCIÓN
+                }
+            }
+        }
         let a = canciones[r].id_album - 1;//INDICE DEL ALBUM
-        listaReproduccion[espacio]= r;//ASIGNAR VALOR DE LA LISTA DE REPRODUCCIÓN
+        if(random == -1){
+            listaReproduccion[espacio]= r;//ASIGNAR VALOR DE LA LISTA DE REPRODUCCIÓN
+        }
         //ASIGNAR EL NOMBRE DEL ARTISTA, LA CANCIÓN Y LA IMAGEN DEL ALBUM
-        artCR[i].textContent= `${canciones[r].artista}`;
-        nomCR[i].textContent= `${canciones[r].nombre}`;
-        imgBtnPlayCr[i].setAttribute("src", `${albumes[a].url_img}`);
+        artCR[espacio].textContent= `${canciones[r].artista}`;
+        nomCR[espacio].textContent= `${canciones[r].nombre}`;
+        imgBtnPlayCr[espacio].setAttribute("src", `${albumes[a].url_img}`);
         espacio += 1;//HACER QUE EL VALOR AUMENTE
     }
 }
+//SI SE QUIERE REGRESAR A LA CANCIÓN ANTERIOR
 pastSong.addEventListener("click", () =>{
-    if(indiceActual > 0){
+    if(indiceActual > 0){//SI HAY ALGO DETRÁS
         indiceActual -= 1;
+        setColaReproduccion(indiceActual-3, indiceActual -2, indiceActual);
         setBtnCancion();
-        console.log("Que paso");
     }
 });
+//SI SE QUIERE IR A LA SIGUIENTE CANCIÓN
 postSong.addEventListener("click", () =>{
-    if(indiceActual < listaReproduccion.length){
+    if(indiceActual < listaReproduccion.length){//SI HAY ALGO ADELANTE
         indiceActual += 1;
+        setColaReproduccion(indiceActual+1, indiceActual -1, indiceActual);
         setBtnCancion();
-        console.log("Que paso");
     }
 });
 function setBtnCancion(){//FUNCIÓN QUE SE ACTIVA AL HACER CLICK A LOS BOTONES DE COLA DE REPRODUCCIÓN
@@ -106,7 +124,7 @@ function onPlayerStateChange(event){
         }//SI TERMINO DE REPRODUCIRSE, LIMPIA LA BARRA Y AGREGA OTRA CANCIÓN A LISTA DE REPRODUCCIÓN
     if (event.data === YT.PlayerState.ENDED) {
         clearInterval(updateInterval);
-        setColaReproducción(1, listaReproduccion.length);
+        setColaReproduccion(1, listaReproduccion.length, -1);
     }
 }
 
@@ -126,7 +144,7 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         },
     });
-    setColaReproducción(indiceActual + 3, indiceActual);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
+    setColaReproduccion(indiceActual + 3, indiceActual, -1);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
 }
 
 //SI SE HACE CLICK EN EL BOTON DE PAUSA, PAUSA O HAS PLAY
