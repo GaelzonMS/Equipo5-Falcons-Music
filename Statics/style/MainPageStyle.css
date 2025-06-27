@@ -22,6 +22,7 @@ body{
   min-height: fit-content;
   margin: 0;
   padding: 0;
+  padding-bottom: 100px;
   width: 100vw;
   height: 110vh;
 }
@@ -86,6 +87,7 @@ body{
 #PaginaPrincipal{
   width: 65%;
   height: 100%;
+  padding-bottom: 100px;
 }
 
 /* Subseccion de buscador y nombre de pagina */
@@ -435,7 +437,7 @@ body{
 .music-carousel-container {
   width: 100%;
   position: relative;
-  margin: 0;            /* sin márgenes extras */
+  margin: 10px;            
   padding: 0;
 }
 
@@ -472,29 +474,6 @@ body{
   display: none;        /* oculta scrollbar en Chrome/Safari */
 }
 
-
-/* Tarjeta de álbum - TAMAÑO COMPACTO */
-.album-card {
-    flex: 0 0 140px; /* Ancho fijo compacto */
-    scroll-snap-align: start;
-    background: rgba(40, 40, 40, 0.7);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Imagen del álbum - TAMAÑO REDUCIDO */
-.album-cover {
-    width: 100%;
-    height: 70px; /* Altura compacta */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-
 .contenedor-portada {
   height: 70%;
 }
@@ -517,6 +496,20 @@ body{
   font-size: 0.9rem;
   color: #ccc;
   margin: 0;
+}
+.tarjeta-album {
+  flex: 0 0 auto;
+  width: 100px; 
+  height: 140px; 
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
 }
 
 
@@ -549,7 +542,7 @@ body{
   background:rgba(0, 0, 0, 0.6);
   padding:20px;
   border-radius:12px;
-  margin:10px auto 20px 0;
+  margin:10px 0;
   color:white;
   font-family: "Inter", sans-serif;
   width:80%;
