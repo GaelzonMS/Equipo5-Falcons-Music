@@ -284,3 +284,4 @@ const baseDatosJSON = {
     }
   ]
 };
+window.baseDatosJSON = baseDatosJSON;
