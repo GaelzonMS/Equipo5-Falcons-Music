@@ -178,6 +178,13 @@ body{
   background-color: rgb(31,26,26);
 }
 
+#player{
+  width: 350px;
+  height: 360px;
+  left: 0px;
+  top: 0px;
+}
+
 /* ====== FIN DE LA BARRA DE VIDEO ====== */
 
 #footerReproduccion{
