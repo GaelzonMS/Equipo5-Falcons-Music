@@ -8,6 +8,20 @@ let divRegresoLogin = document.getElementById("btn-iniciosesion");
 
 // cambiamos el contenido del boton para regresar al Login
 
+function cerrarSesion (){
+    const cookies = document.cookie.split(";");
+        if(cookies != ''){
+            for(let cookie of cookies){
+                let [nombre, valor] = cookie.split("=");
+                nombre = decodeURIComponent(nombre);
+                valor = JSON.parse(decodeURIComponent(valor));
+                if(nombre.trim() == "USERACTUAL"){
+                    document.cookie = nombre.trim() + `=; max-age=${1*1}`;
+                }
+            }
+        }
+}
+
 function cambiarBtnLogin (){
     const cookies = document.cookie.split(";");
         if(cookies != ''){
@@ -53,9 +67,6 @@ btnPerfil.addEventListener("click", ()=>{
         asideBotones.prepend(divPerfil);
         desplegado = true;
         divRegresoLogin = document.getElementById("mensaje");
-        divRegresoLogin.addEventListener("click", ()=>{
-            window.location.assign("./LoginPageFM.html");
-        })
     } else{
         let divPerfil = document.getElementById("perfil-container");
         divPerfil.style.display = "none";
