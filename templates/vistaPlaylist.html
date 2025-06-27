@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Falcon's Music</title>
-    <link rel="stylesheet" href="../Statics/style/artistasPage.css">
 </head>
 <body>
-    <script src="../Dynamics/baseDeDatos.js"></script>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Statics/style/playlistsVista.css">
+    <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
+    <link rel="stylesheet" href="../Statics/style/playlistStyle.css">
+    <title>Falcon's Music</title>
+</head>
+<body>
+     <!--sidebar-->
 
-
-    <aside id="botones">
+     <aside id="botones">
         <p id="nombre"><img id="imgperfil" href="">Perfil</p>
+        <button  id="btn-iniciosesion"> inicio sesion</button>
         <p class="asideP">NAVEGAR</p>
         <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
         <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
@@ -19,22 +29,27 @@
         <p class="asideP" id="libreria">LIBRERIA</p>
         <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
         <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
-    </aside>
+        <div> 
+            <form  id="agregar-container" style="display: none;">
+                <input type="text" id="nombrePlaylist" minlength="5" maxlength="20" placeholder="Nombre de la playlist" required>
+                <button type="submit" id="crearPL">Agregar</button>
+            </form>
+        </div>
+      </aside>
+
+    <!--Navegador y nombre de la página-->
     <nav>
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+
+        <div id="resultados"> </div>
+
         <div>
             <h2 id="nombrePagina">Falcon's Music</h2>
             <img id="logo" src="">
         </div>
     </nav>
-   
-    <section id="artistas">
-            <div style="display: flex; flex-direction: row;"><h2 id="art-encabezado">Artistas</h2><div id="cerrar"><img src="../Statics/media/cerrarVentana.png"></div></div>
-            <div id="contenedores-art">
-                <div id="artists-container1" class="artists-container"></div>
-            </div>
-    </section>
 
-
+    <!-- footer para los controles de reproduccion -->
     <footer>
         <div id="cancionArtista">
             <p id="artistaCancionR"><img id="imagCancion" href="../Statics/media/background.png">Artista</p>
@@ -47,12 +62,18 @@
         <button id="colaReproduccion"><img href=""></button>
     </footer>
 
+    <section id="artistas">
+            <div style="display: flex; flex-direction: row;"><h2 id="art-encabezado">Mis playlists</h2><div id="cerrar"><img src="../Statics/media/cerrarVentana.png"></div></div>
+            <div id="contenedores-playlist">
+                <div id="artists-container1" class="artists-container"></div>
+            </div>
+    </section>
+
     <!-- scripts para las dimicas de la pagina-->
     <script src="../Dynamics/baseDeDatos.js"></script>
-    <script src="../Dynamics/js/ventanaArtistas.js"></script>
+    <script src="../Dynamics/mainpage.js"></script>
     <script src="../Dynamics/js/crearPlaylist.js"></script>
     <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
     <script src="../Dynamics/js/buscador.js" ></script>
-
 </body>
 </html>

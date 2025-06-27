@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
     <link rel="stylesheet" href="../Statics/style/perfilStyle.css">
     <script src="../Dynamics/baseDeDatos.js"></script>
+    <link rel="stylesheet" href="../Statics/style/playlistStyle.css">
     <title>Falcon's Music</title>
   </head>
 
@@ -27,6 +28,12 @@
       <p class="asideP" id="libreria">LIBRERIA</p>
       <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
       <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
+      <div> 
+        <form  id="agregar-container" style="display: none;">
+            <input type="text" id="nombrePlaylist" minlength="5" maxlength="20" placeholder="Nombre de la playlist" required>
+            <button type="submit" id="crearPL">Agregar</button>
+        </form>
+    </div>
     </aside>
 
     <main id="PaginaPrincipal">
@@ -105,7 +112,11 @@
 
     <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
+<<<<<<< HEAD
     <script src="../Dynamics/js/mostrarPerfil.js"></script>
+=======
+    <script src="../Dynamics/js/crearPlaylist.js"></script>
+>>>>>>> create-Playlists
     <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
     <script src="../Dynamics/js/buscador.js" ></script>
 
