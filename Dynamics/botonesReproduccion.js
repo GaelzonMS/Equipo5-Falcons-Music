@@ -5,7 +5,7 @@ let updateInterval;//ACTUALIZAR Y GUARDAR LA DURACIÓN DEL VIDEO
 let videoId= "";//ID INICIAL DEL VIDEO
 let barrasMostrar= 1;//SI SE MOSTRARÁ O NO LA COLA DE REPRODUCCION
 let listaReproduccion= [];//LISTA DE REPRODUCCION
-let indiceActual=0;
+let indiceActual=0;//ÍNDICE DE LA CANCIÓN REPRODUCIDA QUE FORMA PARTE DE LA LISTA DE REPRODUCCIÓN
 
 let artista= document.getElementById("artistaCancionR");//NOMBRE DEL ARTISTA EN EL FOOTER
 let nomCancion= document.getElementById("cancionReproducida");//NOMBRE DE LA CANCIÓN EN EL FOOTER
@@ -23,10 +23,11 @@ let artistaCR= document.getElementById("artistaCancionCR");//NOMBRE DEL ARTISTA 
 let cancionCR= document.getElementById("cancionReproducidaCR");//NOMBRE DE LA CANCIÓN EN EL TÍTULO DE LA COLA DE REPRODUCCIÓN
 let albumImgCR= document.getElementById("albumImag");//IMAGEN DEL ALBUM EN LA COLA DE REPRODUCCIÓN
 
+let playCRBtn =document.querySelectorAll(".playCRBtn");//BOTON DE PLAY EN LA COLA DE REPRODUCCIÓN
 let nomCR =document.querySelectorAll(".nomCR");//TODOS LOS NOMBRES DE LAS CANCIONES EN LA COLA DE REPRODUCCIÓN
 let artCR =document.querySelectorAll(".artCR");//TODOS LOS NOMBRES DE LOS ARTISTAS EN LA COLA DE REPRODUCCIÓN
 let imgBtnPlayCr= document.querySelectorAll(".imgBtnPlayCr");//TODAS LAS IMÁGENES DE LOS ALBUMES EN LAS CANCIONES DE LA COLA DE REPRODUCCIÓN
-//IDEA ADDEVENTLISTENER PARA CADA BOTON Y QUE CAMBIE UNA VARIABLE DEPENDIENDO EL NO. DE CANCIÓN
+//IDEA ADDEVENTLISTENER PARA CADA BOTON Y QUE CAMBIE LA VARIABLE INDICEACTUAL
 const canciones = baseDatosJSON.canciones;//CANCIONES DE LA BASE DE DATOS
 const numCanciones= canciones.length;//NUM DE CANCIONES DE LA BASE DE DATOS
 const artistas= baseDatosJSON.artistas;//ARTISTAS DE LA BASE DE DATOS
@@ -34,9 +35,16 @@ const albumes= baseDatosJSON.album;//ALBUMES DE LA BASE DE DATOS
 
 /*FUNCIONES*/
 
+playCRBtn.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    indiceActual = i;
+    setBtnCancion();
+  });
+});
+
 //FUNCIÓN QUE ESTABLECE LAS CANCIONES EN LA COLA DE REPRODUCCIÓN
-function setColaReproduccion(maxLista, espacio, random){//PARAMETROS DE NUM DE CANCIONES A ASIGNAR Y EL ESPACIO QUE OCUPARAN EN LISTA DE REPRODUCCIÓN
-    for (let i=0; i < maxLista; i++){
+function setColaReproduccion(minLista,maxLista, espacio, random){//PARAMETROS DE NUM DE CANCIONES A ASIGNAR Y EL ESPACIO QUE OCUPARAN EN LISTA DE REPRODUCCIÓN
+    for (let i=minLista; i < maxLista; i++){
         let r;
         if(random == -1){//SI SE SELECCIONO RANDOM
             r = Math.floor(Math.random() * (numCanciones));//NÚMERO ALEATORIO RANGO 0 AL TOTAL DE CANCIONES
@@ -45,7 +53,7 @@ function setColaReproduccion(maxLista, espacio, random){//PARAMETROS DE NUM DE C
         }
         }
         else{
-            if(random <=listaReproduccion.lenght - 1){//SI EL ÍDICE DADO ES DE LA LISTA DE REPRODUCCIÓN
+            if(random <=listaReproduccion.length - 1){//SI EL ÍDICE DADO ES DE LA LISTA DE REPRODUCCIÓN
                 r= random;//NÚMERO DE ÍNDICE DADO A LA FUNCIÓN
             }
             else{
@@ -56,7 +64,7 @@ function setColaReproduccion(maxLista, espacio, random){//PARAMETROS DE NUM DE C
             }
         }
         let a = canciones[r].id_album - 1;//INDICE DEL ALBUM
-        if(random == -1){
+        if(random == -1){//SI SE ELIGIÓ AGREGAR UNA CANCIÓN RANDOM
             listaReproduccion[espacio]= r;//ASIGNAR VALOR DE LA LISTA DE REPRODUCCIÓN
         }
         //ASIGNAR EL NOMBRE DEL ARTISTA, LA CANCIÓN Y LA IMAGEN DEL ALBUM
@@ -70,7 +78,6 @@ function setColaReproduccion(maxLista, espacio, random){//PARAMETROS DE NUM DE C
 pastSong.addEventListener("click", () =>{
     if(indiceActual > 0){//SI HAY ALGO DETRÁS
         indiceActual -= 1;
-        setColaReproduccion(indiceActual-3, indiceActual -2, indiceActual);
         setBtnCancion();
     }
 });
@@ -78,12 +85,21 @@ pastSong.addEventListener("click", () =>{
 postSong.addEventListener("click", () =>{
     if(indiceActual < listaReproduccion.length){//SI HAY ALGO ADELANTE
         indiceActual += 1;
-        setColaReproduccion(indiceActual+1, indiceActual -1, indiceActual);
         setBtnCancion();
+        console.log(indiceActual-1, indiceActual + 2, indiceActual-1, -1);
+        setColaReproduccion(indiceActual-1, indiceActual + 2, indiceActual-1, -1);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
     }
 });
-function setBtnCancion(){//FUNCIÓN QUE SE ACTIVA AL HACER CLICK A LOS BOTONES DE COLA DE REPRODUCCIÓN
+//FUNCIÓN QUE SE ACTIVA AL HACER CLICK A LOS BOTONES DE COLA DE REPRODUCCIÓN
+function setBtnCancion(){
     let r=listaReproduccion[indiceActual];//VALOR DEL INDICE DE LA LISTA DE REPRODUCCIÓN
+    //CAMBIAR ID DEL VIDEO 
+    player.loadVideoById(canciones[r].link);
+    //CAMBIAR LA DURACIÓN DEL VIDEO
+    updateInterval = setInterval(() => {
+        duracion = player.getDuration();
+        inputDuracion.max = duracion;
+    }, 1000);
     let a= canciones[r].id_album -1;//INDICE DEL ALBUM
     //ASIGNAR EL NOMBRE DEL ARTISTA, LA CANCIÓN Y LA IMAGEN DEL ALBUM TANTO EN EL FOOTER COMO EN EL ASIDE
     artista.textContent= `${canciones[r].artista}`;
@@ -92,13 +108,6 @@ function setBtnCancion(){//FUNCIÓN QUE SE ACTIVA AL HACER CLICK A LOS BOTONES D
     cancionCR.textContent= `${canciones[r].nombre}`;
     imagCancion.setAttribute("src", `${albumes[a].url_img}`);
     albumImgCR.setAttribute("src", `${albumes[a].url_img}`);
-    //CAMBIAR ID DEL VIDEO 
-    player.loadVideoById(canciones[r].link);
-    //CAMBIAR LA DURACIÓN DEL VIDEO
-    updateInterval = setInterval(() => {
-        duracion = player.getDuration();
-        inputDuracion.max = duracion;
-    }, 1000);
 }
 
 function onPlayerReady(event) {
@@ -115,6 +124,7 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event){
+    //SI CAMBIA EL ESTADO DEL REPRODUCTOR PLAYER
     if (event.data == YT.PlayerState.PLAYING) {
     //SI SE ESTÁ REPRODUCIENDO, PON EL ÍCONO DE REPRODUCCIÓN
         playPauseImg.setAttribute("src", "../Statics/media/play-solid.png");
@@ -123,28 +133,33 @@ function onPlayerStateChange(event){
             playPauseImg.setAttribute("src", "../Statics/media/pause-solid.png");
         }//SI TERMINO DE REPRODUCIRSE, LIMPIA LA BARRA Y AGREGA OTRA CANCIÓN A LISTA DE REPRODUCCIÓN
     if (event.data === YT.PlayerState.ENDED) {
-        clearInterval(updateInterval);
-        setColaReproduccion(1, listaReproduccion.length, -1);
+        if(indiceActual== 0){
+            clearInterval(updateInterval);
+        }
+        setColaReproduccion(indiceActual+1, indiceActual+4, listaReproduccion.length + 1, -1);
+        indiceActual+=1;
+        setBtnCancion();
     }
 }
 
 function onYouTubeIframeAPIReady() {
-    //AGREGA EL OBJETO PLAYER CON DISTINTOS ATRIBUTOS
+    //INICIALIZA EL OBJETO PLAYER CON DISTINTOS ATRIBUTOS
     player = new YT.Player("player", {
         videoId: `${videoId}`,
         playerVars: {
-            controls: 0,
-            modestbranding: 1,
-            rel: 0,
-            showinfo: 0,
-            fs: 0,
+            controls: 0,//OCULTA LOS CONTROLES
+            modestbranding: 1,//OCULTA EL BRANDING DE YOUTUBE
+            rel: 0,//SE SUPONE QUE EVITA MOSTRAR VIDEOS RELACIONADOS AL FINAL
+            fs: 0,//DESACTIVA LA PANTALLA COMPLETA
         },
         events: {
             onReady: onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
         },
     });
-    setColaReproduccion(indiceActual + 3, indiceActual, -1);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
+    //HACE QUE LA COLA DE REPRODUCCIÓN OBTENGA 3 CANCIONES AL CARGAR EL REPRODUCTOR
+    setColaReproduccion(indiceActual, indiceActual + 3, indiceActual, -1);//AL INICIAR, ESTABLECE TRES CANCIONES A LA COLA
+    console.log(listaReproduccion);
 }
 
 //SI SE HACE CLICK EN EL BOTON DE PAUSA, PAUSA O HAS PLAY
