@@ -4,6 +4,7 @@ if (!window.baseDatosJSON) {
 }
 
 // Constantes del html
+
 //const buscador = document.getElementById("buscador");// ya no lo necesite ya que lo referencie en el detector de eventos, aunque chance por buenas practicas seria bueno
 const resultadosDiv = document.getElementById("resultados");
 

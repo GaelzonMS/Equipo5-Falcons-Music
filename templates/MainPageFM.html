@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/style/MainPageStyle.css">
     <link rel="stylesheet" href="../Statics/style/resultadosBusqueda.css">
+    <link rel="stylesheet" href="../Statics/style/perfilStyle.css">
     <script src="../Dynamics/baseDeDatos.js"></script>
     <title>Falcon's Music</title>
-</head>
-<body>
-     <!--sidebar-->
+  </head>
 
-     <aside id="botones">
-        <p id="nombre"><img id="imgperfil" href="">Perfil</p>
-        <button  id="btn-iniciosesion"> inicio sesion</button>
-        <p class="asideP">NAVEGAR</p>
-        <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
-        <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
-        <div><button class="asideBtns" id="btnArtistas">ARTISTAS</button></div>
-        <p class="asideP" id="libreria">LIBRERIA</p>
-        <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
-        <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
-      </aside>
+  <body>
 
-    <!--Navegador y nombre de la página-->
-    <nav>
-        <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+    <!--sidebar izquierda-->
 
-        <div id="resultados"> </div>
+    <aside id="botones"> 
+      <p id="nombre" class="asideBtns"><img id="imgperfil" src="../Statics/media/foto-login.webp">Perfil</p>
+      <button  id="btn-iniciosesion"> inicio sesion</button>
+      <br><br>
+      <p class="asideP">NAVEGAR</p>
+      <div><button class="asideBtns" id="btnGenero">GENERO</button></div>
+      <div><button class="asideBtns" id="btnPlaylist">PLAYLIST</button></div>
+      <div><button class="asideBtns" id="btnArtistas">ARTISTAS</button></div>
+      <br><br>
+      <br>
+      <p class="asideP" id="libreria">LIBRERIA</p>
+      <div><button class="asideBtns" id="favoritos">FAVORITOS</button></div>
+      <div><button class="asideBtns" id="btnAgregar">Agregar playlist</button></div>
+    </aside>
 
-        <div>
-            <h2 id="nombrePagina">Falcon's Music</h2>
-            <img id="logo" src="">
+    <main id="PaginaPrincipal">
+
+      <section id="SeccionBuscadorYNombre">
+        <!--Buscador y nombre de la página-->
+
+        <div id="busquedayresultados">
+          <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+          <div id="resultados"> </div>
         </div>
-    </nav>
 
-    <!--Sección Home-->
-    <section id="PaginaPrincipal">
-        <div><img id="imgDecoracion" src=""></div>
+        <div id="divNombrePagina">
+          <h2 id="nombrePagina">Falcon's Music</h2>
+          <img id="logo" src="">
+        </div>
+      </section>
 
-    <!-- Sección del Carrusel Compacto -->
-<div class="music-carousel-container">
-  <h3 class="carousel-title">Álbumes destacados</h3>
-    <div class="music-carousel">
-        <button class="carousel-btn prev-btn">‹</button>
+      <!--<div><img id="imgDecoracion" src=""></div>-->
+
+      <section id="seccionCarrusel">
+        <!-- Sección del Carrusel Compacto -->
+        <div class="music-carousel-container">
+          <h3 class="carousel-title">Álbumes destacados</h3>
+          <div class="music-carousel">
+            <button class="carousel-btn prev-btn">‹</button>
             <div class="carousel-track" id="album-carousel">
-      <!-- JS insertará álbumes aquí -->
+              <!-- JS insertará álbumes aquí -->
             </div>
-        <button class="carousel-btn next-btn">›</button>
-    </div>
-</div>
+            <button class="carousel-btn next-btn">›</button>
+          </div>
+        </div>
+      </section>
 
+<<<<<<< HEAD
         <!--Mas escuchados-->
         <section id="mas-escuchados" class="song-section">
             <h3>Más escuchados</h3>
@@ -82,10 +93,61 @@
         <script src="https://www.youtube.com/iframe_api"></script>
         <div id="player" style="display: none;"></div>
         <script src="../Dynamics/botonesReproduccion.js"></script>
+=======
+        <!--Mas escuchados y recomendaciones-->
+      <section id="seccionMasEscuchadosRecomendaciones">
+        <div>
+          <h3 id="mas-escuchados">Más escuchados</h3>
+          <ol>
+            <li>01 Bad Feeling-Jagwar Twin</li>
+            <li>02 Immortals-Fall Out Boy</li>
+            <li>03 Radioactive-Imagine Dragons</li>
+            <li>04 Lamento Boliviano-Los Enanitos Verdes</li>
+          </ol>
+        </div>
+    
+        <div class="recommendations">
+          <h2>Recomendaciones</h2>
+          <ul class="listaCanciones">
+            <li> Canción 1 - Artista</li>
+            <li> Canción 2 - Artista</li>
+            <li> Canción 3 - Artista</li>
+          </ul>
+        </div>    
+      </section>
+    </main>
+
+    <!--Sidebar De Reproducción de video-->
+
+    <aside id="sidebarVideo">
+      <!--Reproductor-->
+      <div id="player"></div>
+    </aside>
+
+    <footer id="footerReproduccion">
+
+      <div id="cancionArtista">
+        <p id="artistaCancionR"><img id="imagCancion" src="../Statics/media/background.png">Artista</p>
+        <p id="cancionReproducida">Canción reproduciendose</p>
+      </div>
+
+      <button id="favBtn"><img id="favImg" src="../Statics/media/star-regular.png"></button>
+      <button id="pastSong"><img id="pastImg" src="../Statics/media/backward-solid.png"></button>
+      <button id="playPausa"><img id="playImg" src="../Statics/media/pause-solid.png"></button>
+      <input type="range" min="0" max="50" value="0" id="duracion">
+      <button id="postSong"><img id="postImg" src="../Statics/media/forward-solid.png"></button>
+      <button id="colaReproduccion"><img id="repImg" src="../Statics/media/bars-solid.png"></button>
+      <script src="https://youtube.com/iframe_api"></script>
+      <script src="../Dynamics/botonesReproduccion.js"></script>
+
+>>>>>>> 3b68fac504c7102629ce81c18ec32230a490a6d9
     </footer>
+
     <script src="../Dynamics/baseDeDatos.js"></script>
     <script src="../Dynamics/mainpage.js"></script>
+    <script src="../Dynamics/js/mostrarPerfil.js"></script>
     <!-- js del buscador, vi que en el js principal agregaron los albums y no quisiera que se comprometiera-->
     <script src="../Dynamics/js/buscador.js" ></script>
-</body>
+
+  </body>
 </html>
